@@ -1,0 +1,9 @@
+disease-description
+disease-treatment
+disease-symptoms_free
+disease-overview
+disease-prevention
+disease-diagnosis
+synonyms
+disease-causes
+disease-treatment_summary
