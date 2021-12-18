@@ -30,9 +30,9 @@ class Trainer(object):
 
         if args.pretrained:
             print(args.pretrained_path)
-            self.config = self.config_class.from_pretrained(args.pretrained_path, finetuning_task=args.token_level)
+            self.config = self.config_class.from_pretrained(args.model_name_or_path, finetuning_task=args.token_level)
             self.model = self.model_class.from_pretrained(
-                args.pretrained_path,
+                "/workspace/vinbrain/minhnp/trainNER/src/baseline/",
                 config=self.config,
                 args=args,
                 slot_label_lst=self.slot_label_lst,
@@ -286,3 +286,5 @@ class Trainer(object):
             logger.info("***** Model Loaded *****")
         except Exception:
             raise Exception("Some model files might be missing...")
+
+            

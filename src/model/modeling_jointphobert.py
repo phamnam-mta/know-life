@@ -6,7 +6,7 @@ from torch import Tensor, device, dtype, nn
 from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
 
 from .module import IntentClassifier, SlotClassifier
-
+from model.tcn import TemporalConvNet
 
 
 class JointPhoBERT(RobertaPreTrainedModel):
