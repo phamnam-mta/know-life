@@ -1,0 +1,4229 @@
+[
+    {
+        "question": "Áp xe là gì?",
+        "disease": "Áp xe",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Áp xe phổi có lây không?",
+        "disease": "Áp xe phổi",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Vậy bệnh Alzheimer là gì? Nguyên nhân bệnh alzheimer, phòng ngừa bệnh alzheimer như thế nào?",
+        "disease": "Alzheimer",
+        "attribute": [
+            "overview",
+            "cause",
+            "prevention"
+        ]
+    },
+    {
+        "question": "AIDS là gì?",
+        "disease": "AIDS",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "AIDS là viết tắt của từ gì?",
+        "disease": "AIDS",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân gây bệnh AIDS là gì?",
+        "disease": "AIDS",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "AIDS có mấy giai đoạn?",
+        "disease": "AIDS",
+        "attribute": [
+            "main_type"
+        ]
+    },
+    {
+        "question": "Bệnh addison là bệnh gì?",
+        "disease": "Addison",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Làm thế nào để biết bị áp xe não?",
+        "disease": "Áp xe não",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Áp xe quanh thận là gì?",
+        "disease": "Áp xe thận",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân áp xe thận là gì?",
+        "disease": "Áp xe thận",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Những dấu hiệu và triệu chứng của bệnh áp xe thận là gì?",
+        "disease": "Áp xe thận",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Áp xe thận có nguy hiểm không?",
+        "disease": "Áp xe thận",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Điều trị áp xe thận như thế nào?",
+        "disease": "Áp xe thận",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ấu dâm là gì?",
+        "disease": "Ấu dâm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ấu dâm là như thế nào?",
+        "disease": "Ấu dâm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy bệnh alcapton niệu là gì và nguyên nhân, triệu chứng, điều trị như thế nào?",
+        "disease": "Alkapton niệu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Áp xe gan là gì ?",
+        "disease": "Áp xe gan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao là bệnh gì?",
+        "disease": "Bệnh lao phổi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao phổi có lây?",
+        "disease": "Bệnh lao phổi",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Vậy bệnh bạch hầu là gì, nguyên nhân, cách phòng và điều trị bệnh bạch hầu ra sao?",
+        "disease": "Bạch hầu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Basedow là bệnh gì?",
+        "disease": "Basedow",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bướu cổ là gì?",
+        "disease": "Bướu cổ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Cách chữa bệnh bướu cổ như thế nào?",
+        "disease": "Bướu cổ",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vậy bóng đè có nguy hiểm không?",
+        "disease": "Bóng đè",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Bệnh bạch biến là gì?",
+        "disease": "Bạch biến",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh bạch biến có lây không?",
+        "disease": "Bạch biến",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh bạch biến có chữa được không?",
+        "disease": "Bạch biến",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh lao xương có lây không?",
+        "disease": "Bệnh lao xương",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bạch cầu cấp là gì?",
+        "disease": "Bạch cầu cấp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh tả là gì?",
+        "disease": "Bệnh tả",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh tả lây qua đường nào?",
+        "disease": "Bệnh tả",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh vảy nến là gì?",
+        "disease": "Bệnh vảy nến",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh vảy nến có chữa trị được không?",
+        "disease": "Bệnh vảy nến",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh vảy nến có chữa trị được không?",
+        "disease": "Bệnh vảy nến",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh bại liệt là gì?",
+        "disease": "Bại liệt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bàng quang tăng hoạt là gì?",
+        "disease": "Bàng quang tăng hoạt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy bệnh Barrett thực quản có nguy hiểm không?",
+        "disease": "Barrett thực quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bỏng độ mấy cần ghép da?",
+        "disease": "Bỏng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bạch sản là gì?",
+        "disease": "Bạch sản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bạch sản miệng có lây không?",
+        "disease": "Bạch sản",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh Still là bệnh gì?",
+        "disease": "Bệnh Still ở người lớn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh Still ở người lớn là gì?",
+        "disease": "Bệnh Still ở người lớn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh quai bị là bệnh gì?",
+        "disease": "Bệnh quai bị",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh quai bị lây truyền qua đường nào?",
+        "disease": "Bệnh quai bị",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Sởi là gì?",
+        "disease": "Bệnh sởi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Rubella là bệnh gì?",
+        "disease": "Bệnh Rubella",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Brucella là bệnh gì?",
+        "disease": "Brucella",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng bàn chân phẳng là gì?",
+        "disease": "Bàn chân phẳng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Buồng trứng đa nang là gì?",
+        "disease": "Buồng trứng đa nang",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Buồng trứng đa nang có thai được không?",
+        "disease": "Buồng trứng đa nang",
+        "attribute": [
+            "riskfactor"
+        ]
+    },
+    {
+        "question": "Buồng trứng đa nang có tự khỏi?",
+        "disease": "Buồng trứng đa nang",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh giác mạc chóp là gì?",
+        "disease": "Bệnh giác mạc chóp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Cryptosporidium là gì? ",
+        "disease": "Bệnh do Cryptosporidium",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh chốc đầu có lây không?",
+        "disease": "Chốc đầu",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Vậy còn ống động mạch là bệnh gì?",
+        "disease": "Còn ống động mạch",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân chấn thương sọ não xảy ra?",
+        "disease": "Chấn thương sọ não",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Cận thị là gì?",
+        "disease": "Cận thị",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Cường lách là gì?",
+        "disease": "Cường lách",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Cường kinh là gì ?",
+        "disease": "Cường kinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh cơ tim phì đại là gì?",
+        "disease": "Cơ tim phì đại",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Không hiểu những chỉ dẫn hay câu hỏi ngắn như “Lấy giầy của con và đặt lên giá”, “Trưa nay con muốn ăn gì?”.",
+        "disease": "Chậm nói",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Rách sụn chêm là gì? ",
+        "disease": "Chấn thương sụn chêm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh Down là gì?",
+        "disease": "Down",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh Down có di truyền không?",
+        "disease": "Down",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh Down là đột biến gì?",
+        "disease": "Down",
+        "attribute": [
+            "main_type"
+        ]
+    },
+    {
+        "question": "Dịch hạch lây qua đường nào?",
+        "disease": "Dịch hạch",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Dịch hạch có chữa được không?",
+        "disease": "Dịch hạch",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Dị ứng thời tiết có lây không?",
+        "disease": "Dị ứng thời tiết",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Các triệu chứng dị ứng thực phẩm là gì?",
+        "disease": "Dị ứng thực phẩm",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Bệnh dại là gì?",
+        "disease": "Dại",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh dại có lây từ người sang người không?",
+        "disease": "Dại",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Vậy dị dạng mạch máu não có nguy hiểm không?",
+        "disease": "Dị dạng mạch não",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Dậy thì muộn là gì?",
+        "disease": "Dậy thì muộn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy dấu hiệu dậy thì sớm ở bé gái là gì?",
+        "disease": "Dậy thì sớm ở nữ",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Đau thần kinh tọa là gì ?",
+        "disease": "Đau thần kinh tọa",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Đau thần kinh tọa có nguy hiểm không?",
+        "disease": "Đau thần kinh tọa",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Động kinh là gì?",
+        "disease": "Động kinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Động kinh có di truyền không?",
+        "disease": "Động kinh",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Biểu hiện động kinh là như thế nào?",
+        "disease": "Động kinh",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Bệnh động kinh có chữa khỏi không?",
+        "disease": "Động kinh",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vậy, đái rắt là bệnh gì?",
+        "disease": "Đái rắt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Đổ mồ hôi trộm là bệnh gì ?",
+        "disease": "Đổ mồ hôi trộm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Đau nửa đầu là gì?",
+        "disease": "Đau nửa đầu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Có nhiều cách để điều trị đau cổ vai gáy, tùy thuộc vào mức độ của bệnh để có phương pháp điều trị thích hợp, vậy đau cổ vai gáy phải làm sao?",
+        "disease": "Đau cổ vai gáy",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Tiểu rắt là gì?",
+        "disease": "Đái rắt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiểu rắt làm sao hết?",
+        "disease": "Đái rắt",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh đa u tủy xương có chữa được không?",
+        "disease": "Đa u tủy xương",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh lý Protein niệu là gì?",
+        "disease": "Đạm niệu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Đau thắt tim là bệnh gì?",
+        "disease": "Đau thắt ngực",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lượng nước ối ở mức nhiều hơn sinh lý bình thường gọi là đa ối. Vậy đa ối là gì?",
+        "disease": "Đa ối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Đa ối khi mang thai có nguy hiểm không?",
+        "disease": "Đa ối",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Giời leo là một trong những bệnh phổ biến hiện nay, hầu hết mọi người ai cũng đã từng mắc phải. Vậy giời leo là bệnh gì?",
+        "disease": "Giời leo",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh gout là gì?",
+        "disease": "Gout",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh gout có nguy hiểm không?",
+        "disease": "Gout",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Bệnh ghẻ có lây không?",
+        "disease": "Ghẻ",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Giun kim ?",
+        "disease": "Giun kim",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Khi bị gan nhiễm mỡ phải làm sao?",
+        "disease": "Gan nhiễm mỡ",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Gai đen là bệnh gì?",
+        "disease": "Gai đen",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Những dấu hiệu và triệu chứng của bệnh gai đen là gì?",
+        "disease": "Gai đen",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Những yếu tố nào làm tăng nguy cơ bị bệnh gai đen?",
+        "disease": "Gai đen",
+        "attribute": [
+            "riskfactor"
+        ]
+    },
+    {
+        "question": "Làm sao để phòng ngừa bệnh gai đen?",
+        "disease": "Gai đen",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Những phương pháp y học nào dùng để chẩn đoán bệnh gai đen?",
+        "disease": "Gai đen",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Những phương pháp điều trị bệnh gai đen?",
+        "disease": "Gai đen",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Giun tóc sống ở đâu?",
+        "disease": "Giun tóc",
+        "attribute": [
+            "place"
+        ]
+    },
+    {
+        "question": "Giãn tĩnh mạch thực quản là gì?",
+        "disease": "Giãn tĩnh mạch thực quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Chế độ ăn cho người giãn tĩnh mạch thực quản như thế nào?",
+        "disease": "Giãn tĩnh mạch thực quản",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Điều trị giãn vỡ tĩnh mạch thực quản như thế nào?",
+        "disease": "Giãn tĩnh mạch thực quản",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Giãn ống dẫn sữa là gì?",
+        "disease": "Giãn ống dẫn sữa",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Có những cách nào để chữa gù cột sống?",
+        "disease": "Gù cột sống",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Hạ canxi máu là gì?",
+        "disease": "Hạ canxi máu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Điều trị hạ canxi máu như thế nào?",
+        "disease": "Hạ canxi máu",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "HIV là bệnh gì?",
+        "disease": "HIV",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hạ kali máu là bệnh gì?",
+        "disease": "Hạ kali máu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng ruột kích thích là gì?",
+        "disease": "Hội chứng ruột kích thích",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hen phế quản là bệnh gì?",
+        "disease": "Hen phế quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hen phế quản có bị lây không?",
+        "disease": "Hen phế quản",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Hen phế quản được điều trị như thế nào?",
+        "disease": "Hen phế quản",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vậy bệnh hồng cầu hình lưỡi liềm là gì?",
+        "disease": "Hồng cầu lưỡi liềm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hở hàm ếch là gì?",
+        "disease": "Hở hàm ếch",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Patau là gì?",
+        "disease": "Hội chứng Patau",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lý y khoa: Hôi miệng là triệu chứng của bệnh gì?",
+        "disease": "Hôi miệng",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Hôn mê là gì?",
+        "disease": "Hôn mê",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Klinefelter có con được không?",
+        "disease": "Hội chứng Klinefelter",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Raynaud là gì?",
+        "disease": "Hội chứng Raynaud",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy bệnh Hodgkin là gì, nguyên nhân, triệu chứng và biện pháp điều trị, chẩn đoán như thế nào?",
+        "disease": "Hodgkin",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hẹp bao quy đầu là gì?",
+        "disease": "Hẹp bao quy đầu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hẹp bao quy đầu có phải là bệnh bẩm sinh?",
+        "disease": "Hẹp bao quy đầu",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Hẹp bao quy đầu có nguy hiểm không?",
+        "disease": "Hẹp bao quy đầu",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Bệnh hen suyễn lây qua đường nào?",
+        "disease": "Hen suyễn",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Hẹp ống sống là gì?",
+        "disease": "Hẹp ống sống",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy hội chứng hellp là gì?",
+        "disease": "Hội chứng HELLP",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hẹp van hai lá là gì?",
+        "disease": "Hẹp van hai lá",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hẹp van hai lá có nguy hiểm không?",
+        "disease": "Hẹp van hai lá",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Hội chứng Lyell là gì?",
+        "disease": "Hội chứng Lyell",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hẹp niệu đạo là gì?",
+        "disease": "Hẹp niệu đạo",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân gây hẹp niệu đạo là gì?",
+        "disease": "Hẹp niệu đạo",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Hội chứng Marfan là đột biến gì?",
+        "disease": "Hội chứng Marfan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh người tí hon do những nguyên nhân nào gây ra?",
+        "disease": "Hội chứng seckel",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Hội chứng Tourette là gì?",
+        "disease": "Hội chứng Tourette",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Reye là gì ?",
+        "disease": "Hội chứng Reye",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng QT là gì?",
+        "disease": "Hội chứng QT kéo dài",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Sjogren là gì?",
+        "disease": "Hội chứng Sjogren",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Sudeck là gì?",
+        "disease": "Hội chứng Sudeck",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh hạ cam là bệnh gì?",
+        "disease": "Hạ cam",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Cận lâm sàng chẩn đoán hạ cam mềm như thế nào?",
+        "disease": "Hạ cam",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Bệnh hạ cam có nguy hiểm không?",
+        "disease": "Hạ cam",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Hội chứng Fanconi là gì?",
+        "disease": "Hội chứng Fanconi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hạ huyết áp tư thế là gì?",
+        "disease": "Hạ huyết áp tư thế đứng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Horner là gì?",
+        "disease": "Hội chứng Horner",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Sheehan là gì?",
+        "disease": "Hội chứng Sheehan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng sốc nhiễm độc là gì?",
+        "disease": "Hội chứng sốc nhiễm độc",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy hoocmon ADH là gì?",
+        "disease": "Hội chứng tiết hormon kháng bài niệu (ADH) không phù hợp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Fragile X là gì?",
+        "disease": "Hội chứng Fragile X",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lựa chọn điều trị Hẹp eo động mạch chủ ?",
+        "disease": "Hẹp eo động mạch chủ",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Hội chứng Eisenmenger là gì?",
+        "disease": "Hội chứng Eisenmenger",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng west là gì?",
+        "disease": "Hội chứng West",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng budd chiari là gì?",
+        "disease": "Hội chứng Budd-Chiari",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Evans là gì?",
+        "disease": "Hội chứng Evans",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Noonan là gì ?",
+        "disease": "Hội chứng Noonan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy bệnh ho gà là gì?",
+        "disease": "Ho gà",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân gây ra Mittelschmerz?",
+        "disease": "Hội chứng Mittelschmerz",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Những dấu hiệu và triệu chứng của Mittelschmerz?",
+        "disease": "Hội chứng Mittelschmerz",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Khi nào bạn cần gặp bác sĩ?",
+        "disease": "Hội chứng Mittelschmerz",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Hội chứng Dumping có nguy hiểm không?",
+        "disease": "Hội chứng Dumping",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Nguy cơ mắc ung thư liên quan đến hội chứng Beckwith-Wiedemann là gì?",
+        "disease": "Hội chứng Beckwith-Wiedemann",
+        "attribute": [
+            "riskfactor"
+        ]
+    },
+    {
+        "question": "Hạch nền là gì?",
+        "disease": "Hạch nền",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh hạch nền là gì?",
+        "disease": "Hạch nền",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Felty là gì?",
+        "disease": "Hội chứng Felty",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Apallic là gì?",
+        "disease": "Hội chứng Apallic",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hạ đường huyết là bệnh gì?",
+        "disease": "Hạ đường huyết",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Có những nguyên nhân hạ đường huyết nào?",
+        "disease": "Hạ đường huyết",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Triệu chứng hạ đường huyết như thế nào?",
+        "disease": "Hạ đường huyết",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Hạ đường huyết có nguy hiểm không?",
+        "disease": "Hạ đường huyết",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Để phòng ngừa hạ đường huyết nên làm gì?",
+        "disease": "Hạ đường huyết",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Hôi nách là gì?",
+        "disease": "Hôi nách",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hôi nách có lây không?",
+        "disease": "Hôi nách",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh hôi nách có lây không?",
+        "disease": "Hôi nách",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Để có kiến thức phòng ngừa hiệu quả cũng như xử trí phù hợp, trước hết cần tìm hiểu huyết khối tĩnh mạch sâu là gì?",
+        "disease": "Huyết khối tĩnh mạch sâu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Albright là gì?",
+        "disease": "Hội chứng Albright",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hội chứng Albright có nguy hiểm không?",
+        "disease": "Hội chứng Albright",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Jet lag là gì?",
+        "disease": "Jet lag",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Jet lag là sao?",
+        "disease": "Jet lag",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Triệu chứng jet lag như thế nào?",
+        "disease": "Jet lag",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Có tình trạng khó ngủ hay có cảm thấy rất buồn ngủ vào ban ngày không?",
+        "disease": "Jet lag",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Vậy khô mắt là bệnh gì?",
+        "disease": "Khô mắt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh khí phế thũng là gì?",
+        "disease": "Khí phế thũng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh Kawasaki là bệnh gì?",
+        "disease": "Kawasaki",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lịch sử bệnh mạch máu ?",
+        "disease": "Kawasaki",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh Kawasaki do nguyên nhân nào?",
+        "disease": "Kawasaki",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Bệnh nhân có thể băn khoăn liệu bệnh Kawasaki có lây không? ",
+        "disease": "Kawasaki",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh Kawasaki được điều trị như thế nào?",
+        "disease": "Kawasaki",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Lồng ruột là gì?",
+        "disease": "Lồng ruột",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao hạch có chữa khỏi không?",
+        "disease": "Lao hạch",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Liệt dương là gì?",
+        "disease": "Liệt dương",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Liệt dương có tự khỏi?",
+        "disease": "Liệt dương",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Loãng xương là gì?",
+        "disease": "Loãng xương",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lao màng phổi có đi làm được không?",
+        "disease": "Lao màng phổi",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Lao màng phổi có chữa được không?",
+        "disease": "Lao màng phổi",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh Lyme là gì?",
+        "disease": "Lyme",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lyme có nguy hiểm không?",
+        "disease": "Lyme",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy viêm lưỡi bản đồ là gì?",
+        "disease": "Lưỡi bản đồ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao phổi có nguy hiểm không? ",
+        "disease": "Lao phổi",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Bệnh lao phổi là gì?",
+        "disease": "Lao phổi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao phổi có lây không?",
+        "disease": "Lao phổi",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh lao phổi có chữa được không?",
+        "disease": "Lao phổi",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Hiện nay, các bệnh lao hệ thống xương khớp đang chiếm 1/5 tổng số các trường hợp lao ngoài phổi. Riêng ở Việt Nam, 65% bệnh nhân bị lao hệ xương khớp bị mắc bệnh lao cột sống, lao khớp (khớp gối, háng, cổ chân, vai, cổ tay...). Vậy bệnh lao cột sống là gì?",
+        "disease": "Lao cột sống",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy nguyên nhân bệnh leukemia là gì và triệu chứng ra sao?",
+        "disease": "Leukemia cấp",
+        "attribute": [
+            "cause",
+            "symptom"
+        ]
+    },
+    {
+        "question": "Bệnh bạch cầu hình thành như thế nào?",
+        "disease": "Leukemia cấp",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Bệnh bạch cầu được phân loại như thế nào?",
+        "disease": "Leukemia cấp",
+        "attribute": [
+            "main_type"
+        ]
+    },
+    {
+        "question": "Loạn thị là gì?",
+        "disease": "Loạn thị",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh loạn thị có chữa được không?",
+        "disease": "Loạn thị",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh lao ruột là gì?",
+        "disease": "Lao ruột",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lichen là bệnh gì?",
+        "disease": "Lichen nitidus",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lichen nitidus là gì?",
+        "disease": "Lichen nitidus",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lỵ trực khuẩn là gì?",
+        "disease": "Lỵ trực trùng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Các biện pháp phòng bệnh lỵ trực khuẩn như thế nào?",
+        "disease": "Lỵ trực trùng",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Vậy nguyên nhân loét hành tá tràng là gì và loét hành tá tràng có nguy hiểm không?",
+        "disease": "Loét hành tá tràng",
+        "attribute": [
+            "cause",
+            "severity"
+        ]
+    },
+    {
+        "question": "Lỗ tiểu đóng thấp là gì?",
+        "disease": "Lỗ tiểu đóng thấp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lao kê là gì?",
+        "disease": "Lao kê",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao kê có nguy hiểm không?",
+        "disease": "Lao kê",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Lao kê có lây không?",
+        "disease": "Lao kê",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Loạn sản sụn xương là gì?",
+        "disease": "Loạn sản sụn xương",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao da là gì?",
+        "disease": "Lao da và mô dưới da",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lao thanh quản là bệnh gì?",
+        "disease": "Lao thanh quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lao thanh quản có lây không?",
+        "disease": "Lao thanh quản",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh lao có mấy loại?",
+        "disease": "Lao thanh quản",
+        "attribute": [
+            "main_type"
+        ]
+    },
+    {
+        "question": "Loét giác mạc là gì?",
+        "disease": "Loét giác mạc",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm loét giác mạc có lây không?",
+        "disease": "Loét giác mạc",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Loét giác mạc bao lâu thì khỏi?",
+        "disease": "Loét giác mạc",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh lao ở mắt là gì?",
+        "disease": "Lao ở mắt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lao ở mắt có nguy hiểm không?",
+        "disease": "Lao ở mắt",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Lệch khớp cắn là gì?",
+        "disease": "Lệch khớp cắn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh lỵ amip có lây không?",
+        "disease": "Lỵ amíp đường ruột mạn tính",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh lậu là gì?",
+        "disease": "Lậu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tùy theo mức độ nghiêm trọng của bệnh, phương pháp điều trị loạn sản cổ tử cung sẽ khác nhau. Loạn sản cổ tử cung có chữa được không?",
+        "disease": "Loạn sản cổ tử cung",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Lao ruột là gì?",
+        "disease": "Lao ruột, phúc mạc và mạc treo các tuyến",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Lao màng bụng có lây không?",
+        "disease": "Lao ruột, phúc mạc và mạc treo các tuyến",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Balantidium là gì?",
+        "disease": "Lỵ do Balantidium",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Balantidium Coli gây bệnh gì?",
+        "disease": "Lỵ do Balantidium",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Mù màu là gì? Mù màu là như thế nào?",
+        "disease": "Mù màu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân gây mù màu là gì?",
+        "disease": "Mù màu",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Triệu chứng mù màu là gì?",
+        "disease": "Mù màu",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Mù màu có chữa được không?",
+        "disease": "Mù màu",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Mất khứu giác có hồi phục được không?",
+        "disease": "Mất khứu giác",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Mụn rộp sinh dục là bệnh gì?",
+        "disease": "Mụn rộp sinh dục",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh Meniere là gì?",
+        "disease": "Meniere",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Mụn rộp là gì?",
+        "disease": "Mụn rộp lành tính",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Mãn kinh sớm là gì?",
+        "disease": "Mãn kinh sớm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân của mãn kinh sớm là gì?",
+        "disease": "Mãn kinh sớm",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Dấu hiệu mãn kinh sớm là gì?",
+        "disease": "Mãn kinh sớm",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Điều trị mãn kinh sớm như thế nào?",
+        "disease": "Mãn kinh sớm",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vậy mộng thịt là gì?",
+        "disease": "Mộng thịt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh Moyamoya là gì?",
+        "disease": "Moyamonya",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh mạch vành là gì?",
+        "disease": "Mạch vành",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Mất ngủ là gì?",
+        "disease": "Mất ngủ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh nang thận là gì?",
+        "disease": "Nang thận",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh nang thận có nguy hiểm không?",
+        "disease": "Nang thận",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Nghiện ma túy là gì?",
+        "disease": "Nghiện ma túy",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Triệu chứng nghiện ma túy như thế nào?",
+        "disease": "Nghiện ma túy",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Nứt hậu môn là gì?",
+        "disease": "Nứt kẽ hậu môn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nứt hậu môn phải làm sao?",
+        "disease": "Nứt kẽ hậu môn",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ngộ độc thực phẩm là gì?",
+        "disease": "Ngộ độc thực phẩm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy bệnh nha chu là gì, nguyên nhân và cách điều trị ra sao?",
+        "disease": "Nha chu",
+        "attribute": [
+            "overview",
+            "cause",
+            "treatment"
+        ]
+    },
+    {
+        "question": "Nám da có triệu chứng như thế nào?",
+        "disease": "Nám da",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Nhịp tim chậm là gì?",
+        "disease": "Nhịp tim chậm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhịp tim chậm có ảnh hưởng gì?",
+        "disease": "Nhịp tim chậm",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Tụ cầu vàng là gì?",
+        "disease": "Nhiễm trùng do tụ cầu vàng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nang tuyến bartholin có nguy hiểm không?",
+        "disease": "Nang tuyến Bartholin",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Viêm nang tuyến Bartholin có tự khỏi ?",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Nhược cơ là gì?",
+        "disease": "Nhược cơ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ngoại tâm thu là gì?",
+        "disease": "Ngoại tâm thu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ngoại tâm thu có chữa được không?",
+        "disease": "Ngoại tâm thu",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Nang nước thừng tinh là gì?",
+        "disease": "Nang nước thừng tinh ở trẻ em",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh não gan có nguy hiểm không?",
+        "disease": "Não gan",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Nhiễm độc thai nghén là gì?",
+        "disease": "Nhiễm độc thai nghén",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhồi máu não là gì?",
+        "disease": "Nhồi máu não",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh nhược thị là bệnh gì?",
+        "disease": "Nhược thị",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy nhiễm trùng ối là gì?",
+        "disease": "Nhiễm trùng ối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhiễm trùng ối có nguy hiểm không?",
+        "disease": "Nhiễm trùng ối",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Nhiễm liên cầu khuẩn là gì?",
+        "disease": "Nhiễm trùng huyết do liên cầu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhau bong non là gì?",
+        "disease": "Nhau bong non",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhau tiền đạo là gì?",
+        "disease": "Nhau tiền đạo",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhau tiền đạo có ảnh hưởng gì không?",
+        "disease": "Nhau tiền đạo",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Giãn niệu quản là gì?",
+        "disease": "Niệu quản giãn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nang tụy có nguy hiểm không?",
+        "disease": "Nang tụy",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Nhiễm khuẩn hậu sản là gì?",
+        "disease": "Nhiễm khuẩn hậu sản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Xoắn khuẩn là gì?",
+        "disease": "Nhiễm xoắn khuẩn vàng da Leptospira",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhau cài răng lược là như thế nào?",
+        "disease": "Nhau cài răng lược",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhau cài răng lược có nguy hiểm không?",
+        "disease": "Nhau cài răng lược",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Nhồi máu cơ tim cấp là gì?",
+        "disease": "Nhồi máu cơ tim cấp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nấm cryptococcus neoformans gây bệnh ở đâu?",
+        "disease": "Nhiễm nấm Cryptococcus",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Bệnh phong là gì?",
+        "disease": "Phong",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh phong có nguy hiểm không?",
+        "disease": "Phong",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Tại sao người ta mắc bệnh phong?",
+        "disease": "Phong",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Bệnh phong có lây không?",
+        "disease": "Phong",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Vậy bệnh parkinson là gì? Bệnh parkinson nguyên nhân như thế nào? Và bệnh parkinson có di truyền hay không?",
+        "disease": "Parkinson",
+        "attribute": [
+            "overview",
+            "cause",
+            "infection"
+        ]
+    },
+    {
+        "question": "Polyp mũi là gì?",
+        "disease": "Polyp mũi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Polyp mũi có nguy hiểm không?",
+        "disease": "Polyp mũi",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Phì đại cuốn mũi là bệnh gì?",
+        "disease": "Phì đại cuốn mũi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Phì đại cuốn mũi có nguy hiểm không?",
+        "disease": "Phì đại cuốn mũi",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Chữa phì đại cuốn mũi như thế nào?",
+        "disease": "Phì đại cuốn mũi",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vậy phì đại âm vật là gì và có các nguyên nhân, triệu chứng ra sao?",
+        "disease": "Phì đại âm vật",
+        "attribute": [
+            "overview",
+            "cause",
+            "symptom"
+        ]
+    },
+    {
+        "question": "Polyp thanh quản là gì?",
+        "disease": "Polyp thanh quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Polyp cổ tử cung là gì?",
+        "disease": "Polyp cổ tử cung",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Polyp túi mật là gì ?",
+        "disease": "Polyp túi mật",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Quáng gà là gì?",
+        "disease": "Quáng gà",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Quáng gà triệu chứng là gì?",
+        "disease": "Quáng gà",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Rối loạn tiền đình là gì?",
+        "disease": "Rối loạn tiền đình",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Rối loạn tiền đình do nguyên nhân gì?",
+        "disease": "Rối loạn tiền đình",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Những dấu hiệu rối loạn tiền đình là gì?",
+        "disease": "Rối loạn tiền đình",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Những đối tượng nào có nguy cơ bị rối loạn tiền đình?",
+        "disease": "Rối loạn tiền đình",
+        "attribute": [
+            "riskfactor"
+        ]
+    },
+    {
+        "question": "Những thói quen sinh hoạt nào giúp bạn hạn chế hoặc giảm mức độ nghiêm trọng của bệnh rối loạn tiền đình?",
+        "disease": "Rối loạn tiền đình",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Những phương tiện y học nào dùng để chẩn đoán bệnh rối loạn tiền đình?",
+        "disease": "Rối loạn tiền đình",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Những phương pháp nào dùng để điều trị rối loạn tiền đình?",
+        "disease": "Rối loạn tiền đình",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Rối loạn cương dương là gì?",
+        "disease": "Rối loạn cương dương",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Rỉ ối là gì?",
+        "disease": "Rỉ ối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Rối loạn lưỡng cực có nguy hiểm không?",
+        "disease": "Rối loạn lưỡng cực",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Rối loạn lưỡng cực có khỏi được không?",
+        "disease": "Rối loạn lưỡng cực",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Rối loạn sinh tủy có nguy hiểm không?",
+        "disease": "Rối loạn sinh tủy",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Rách giác mạc là gì?",
+        "disease": "Rách giác mạc",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Rối loạn hoảng sợ là gì?",
+        "disease": "Rối loạn hoảng sợ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Chế độ dinh dưỡng cũng quan trọng không kém trong điều trị rối loạn gan ở trẻ em. Vậy rối loạn gan ở trẻ em nên ăn gì?",
+        "disease": "Rối loạn gan ở trẻ em",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vậy rối loạn thần kinh thực vật là gì?",
+        "disease": "Rối loạn thần kinh thực vật",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Rối loạn nhịp tim có nguy hiểm không?",
+        "disease": "Rối loạn nhịp tim",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Rối loạn nhịp tim được chẩn đoán như thế nào?",
+        "disease": "Rối loạn nhịp tim",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Rối loạn nhịp tim có chữa được không?",
+        "disease": "Rối loạn nhịp tim",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Rong kinh là gì?",
+        "disease": "Rong kinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tại sao bị rôm sảy mụn nước?",
+        "disease": "Rôm sảy",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh sốt rét là gì?",
+        "disease": "Sốt rét",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh sốt rét có lây không?",
+        "disease": "Sốt rét",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh sốt rét lây mạnh vào giai đoạn nào?",
+        "disease": "Sốt rét",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Suy thận là gì?",
+        "disease": "Suy thận",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy thận có chữa được không?",
+        "disease": "Suy thận",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh suy giáp là gì?",
+        "disease": "Suy giáp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Hiện nay, bệnh sỏi thận rất phổ biến ở các nước nhiệt đới nóng ẩm như Việt Nam, thường hình thành khi nước tiểu bị lắng cặn, khiến các khoáng chất kết dính lại với nhau. Hầu hết các loại sỏi thận đều tự thoát ra ngoài tự nhiên và có thể khiến người bệnh rất đau. Tuy nhiên nếu được điều trị kịp thời sẽ không ra các tổn hại và các biến chứng về sau. Vậy bệnh sỏi thận là gì?",
+        "disease": "Sỏi thận",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Không ít người bệnh băn khoăn bệnh suy tuyến thượng thận có nguy hiểm không và bệnh suy tuyến thượng thận có chữa được không?",
+        "disease": "Suy tuyến thượng thận",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vậy suy thận mạn là gì?",
+        "disease": "Suy thận mạn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy thận mãn tính có chữa được không?",
+        "disease": "Suy thận mạn",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Suy tuyến yên là bệnh gì?",
+        "disease": "Suy tuyến yên",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân suy tuyến yên là gì?",
+        "disease": "Suy tuyến yên",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Sỏi bàng quang là gì?",
+        "disease": "Sỏi bàng quang",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Sỏi niệu quản là gì?",
+        "disease": "Sỏi niệu quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Són tiểu là gì? ",
+        "disease": "Són tiểu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy thận cấp là gì?",
+        "disease": "Suy thận cấp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy tim là gì?",
+        "disease": "Suy tim",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Sán lá gan là gì?",
+        "disease": "Sán lá gan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Sán lá gan sống ở đâu?",
+        "disease": "Sán lá gan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy dinh dưỡng là gì?",
+        "disease": "Suy dinh dưỡng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Sinh non là gì?",
+        "disease": "Sinh non",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Trẻ bị sinh non sẽ như thế nào ?",
+        "disease": "Sinh non",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy giáp bẩm sinh là gì ?",
+        "disease": "Suy giáp bẩm sinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy suy giáp bẩm sinh có chữa được không?",
+        "disease": "Suy giáp bẩm sinh",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh sốt ve mò là gì?",
+        "disease": "Sốt ve mò",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Song thị được chẩn đoán như thế nào?",
+        "disease": "Song thị",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Người bệnh có bất kỳ triệu chứng khác ngoài song thị?",
+        "disease": "Song thị",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Suy thận cấp là gì?",
+        "disease": "Suy thận cấp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Sỏi mật đau ở đâu?",
+        "disease": "Sỏi mật",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Sỏi mật có nguy hiểm không?",
+        "disease": "Sỏi mật",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Rối loạn sàn chậu là gì?",
+        "disease": "Sa sinh dục",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy sa sinh dục là gì?",
+        "disease": "Sa sinh dục",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy dinh dưỡng thể thấp còi là gì?",
+        "disease": "Suy dinh dưỡng thể thấp còi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy tĩnh mạch chân là gì?",
+        "disease": "Suy tĩnh mạch chân",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Suy tĩnh mạch chân có nguy hiểm không ?",
+        "disease": "Suy tĩnh mạch chân",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Suy tĩnh mạch chân điều trị như thế nào?",
+        "disease": "Suy tĩnh mạch chân",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Trong xã hội hiện đại ngày nay, tình trạng vô sinh, hiếm muộn ở nữ giới ngày càng phổ biến mà một trong những nguyên nhân cơ bản là do bệnh suy buồng trứng gây nên. Vậy suy buồng trứng là gì?",
+        "disease": "Suy buồng trứng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Sa trực tràng là gì?",
+        "disease": "Sa trực tràng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tê bì chân tay là gì?",
+        "disease": "Tê bì tay chân",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thalassemia là gì?",
+        "disease": "Thalassemia",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thalassemia có triệu chứng gì?",
+        "disease": "Thalassemia",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Bệnh nhân Thalassemia được điều trị như thế nào?",
+        "disease": "Thalassemia",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Thoái hóa cột sống cổ có nguy hiểm không?",
+        "disease": "Thoái hóa cột sống cổ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Trầm cảm là bệnh gì? ",
+        "disease": "Trầm cảm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thiếu máu là gì?",
+        "disease": "Thiếu máu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thai trứng (chửa trứng) là gì?",
+        "disease": "Thai trứng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Điều trị chửa trứng như thế nào?",
+        "disease": "Thai trứng",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Chửa trứng có tái phát sau điều trị không?",
+        "disease": "Thai trứng",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh thương hàn là gì?",
+        "disease": "Thương hàn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tắc tia sữa là gì?",
+        "disease": "Tắc tia sữa",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tác hại của tắc tia sữa?",
+        "disease": "Tắc tia sữa",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Khi phát hiện ra bầu vú có dấu hiệu căng to hơn so với bình thường và càng lúc càng tăng dần thì phải chú ý quan sát: Bề mặt vú có đỏ và sờ có đau không?",
+        "disease": "Tắc tia sữa",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Thiếu máu tán huyết là gì?",
+        "disease": "Thiếu máu tán huyết",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thiểu năng tuần hoàn não là gì?",
+        "disease": "Thiểu năng tuần hoàn não",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiêu chảy rota là gì?",
+        "disease": "Tiêu chảy rota",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thận ứ nước là gì? ",
+        "disease": "Thận ứ nước",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thận ứ nước có triệu chứng gì?",
+        "disease": "Thận ứ nước",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Vậy tiêu chảy cấp là gì?",
+        "disease": "Tiêu chảy cấp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy táo bón là gì?",
+        "disease": "Táo bón",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh thừa sắt là gì?",
+        "disease": "Thừa sắt",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh tăng acid uric máu là gì?",
+        "disease": "Tăng acid uric máu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiểu đường tuýp 1 là gì?",
+        "disease": "Tiểu đường tuýp 1",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiểu đường tuýp 1 nguyên nhân là gì?",
+        "disease": "Tiểu đường tuýp 1",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Tiểu đường tuýp 1 có di truyền không?",
+        "disease": "Tiểu đường tuýp 1",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Thuyên tắc ối là như thế nào?",
+        "disease": "Thuyên tắc ối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh thuyên tắc mạch ối là gì?",
+        "disease": "Thuyên tắc ối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy tứ chứng Fallot là gì?",
+        "disease": "Tứ chứng Fallot",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tinh trùng yếu là gì?",
+        "disease": "Tinh trùng yếu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy tinh trùng khỏe mạnh là như thế nào? ",
+        "disease": "Tinh trùng yếu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy thoái hóa khớp gối là gì?",
+        "disease": "Thoái hóa khớp gối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thông liên nhĩ là gì?",
+        "disease": "Thông liên nhĩ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh trĩ nội có lây không?",
+        "disease": "Trĩ nội",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Duy trì chế độ ăn uống khoa học cũng là một trong các biện pháp chữa trị bệnh trĩ nội ở giai đoạn đầu. Vậy bệnh trĩ nội kiêng ăn gì?",
+        "disease": "Trĩ nội",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Thoái hóa võng mạc là gì?",
+        "disease": "Thoái hóa võng mạc",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thoái hóa võng mạc có nguy hiểm không?",
+        "disease": "Thoái hóa võng mạc",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Vậy bệnh trào ngược thực quản dạ dày là gì? Triệu chứng, nguyên nhân và cách phòng bệnh ra sao?",
+        "disease": "Trào ngược dạ dày thực quản",
+        "attribute": [
+            "overview",
+            "symptom",
+            "cause"
+        ]
+    },
+    {
+        "question": "Tắc mạch ối là gì?",
+        "disease": "Tắc mạch ối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiểu đường thai kỳ (đái tháo đường thai kỳ) là gì?",
+        "disease": "Tiểu đường thai kỳ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiểu đường thai kỳ có nguy hiểm không?",
+        "disease": "Tiểu đường thai kỳ",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Nguyên nhân tiểu đường thai kỳ là gì?",
+        "disease": "Tiểu đường thai kỳ",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Nguyên nhân thận đa nang là gì?",
+        "disease": "Thận đa nang",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Vậy cách điều trị tắc ống dẫn tinh như thế nào?",
+        "disease": "Tắc ống dẫn tinh",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Thai chết lưu là gì?",
+        "disease": "Thai chết lưu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thai chết lưu phải làm sao?",
+        "disease": "Thai chết lưu",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Tiểu đường tuýp 2 có nguy hiểm không?",
+        "disease": "Tiểu đường tuýp 2",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiểu đường tuýp 2 có chữa được không?",
+        "disease": "Tiểu đường tuýp 2",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Thủy đậu là gì?",
+        "disease": "Thủy đậu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thuyên tắc phổi là gì?",
+        "disease": "Thuyên tắc phổi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tăng thông khí là gì?",
+        "disease": "Tăng thông khí",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tăng thông khí có nguy hiểm không?",
+        "disease": "Tăng thông khí",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Thoát vị là gì?",
+        "disease": "Thoát vị bẹn người lớn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tinh hoàn ẩn là gì?",
+        "disease": "Tinh hoàn ẩn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tắc vòi trứng hầu như khó có thể nhận biết sớm. Vậy tắc vòi trứng có biểu hiện gì?",
+        "disease": "Tắc vòi trứng",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Các thăm khám lâm sàng chẩn đoán tắc vòi trứng thường bị hạn chế. Vậy khám tắc vòi trứng như thế nào? ",
+        "disease": "Tắc vòi trứng",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Rất nhiều trường hợp bị tắc vòi trứng đều có thắc mắc tắc vòi trứng có chữa được không?",
+        "disease": "Tắc vòi trứng",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Thoát vị não là gì?",
+        "disease": "Thoát vị não",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh thấp tim là gì?",
+        "disease": "Thấp tim ở trẻ em",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tăng tiết mồ hôi là gì?",
+        "disease": "Tăng tiết mồ hôi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thiếu men G6PD là bệnh gì?",
+        "disease": "Thiếu men G6PD",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh trĩ ngoại là gì?",
+        "disease": "Trĩ ngoại",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thoái hóa khớp háng là gì?",
+        "disease": "Thoái hóa khớp háng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tiền mãn kinh là gì?",
+        "disease": "Tiền mãn kinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Phụ nữ phải trải qua giai đoạn tiền mãn kinh ở tuổi nào?",
+        "disease": "Tiền mãn kinh",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Bệnh lí tim bẩm sinh hiện nay không hiếm gặp và đã có nhiều bước tiến quan trong trong can thiệp sửa chữa. Các bệnh lí thường gặp nhất là: thông liên nhĩ, thông liên thất, còn ống động mạch. Bài này sẽ trình bày về thông liên thất. Vậy thông liên thất là bệnh gì?",
+        "disease": "Thông liên thất",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thông liên thất tự đóng khi nào?",
+        "disease": "Thông liên thất",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Túi thừa thực quản là gì?",
+        "disease": "Túi thừa thực quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thoát vị đùi là gì ?",
+        "disease": "Thoát vị đùi",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Thoát vị bẹn ở trẻ em là gì?",
+        "disease": "Thoát vị bẹn trẻ em",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Chữa bệnh trĩ như thế nào cho hiệu quả?",
+        "disease": "Trĩ",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Tiền sản giật là gì?",
+        "disease": "Tiền sản giật",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy tắc ống phóng tinh là gì?",
+        "disease": "Tắc ống phóng tinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh thiên đầu thống là gì?",
+        "disease": "Thiên đầu thống",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhận diện trầm cảm sau sinh - bệnh này có thể tự khỏi không?",
+        "disease": "Trầm cảm sau sinh",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Trầm cảm sau sinh có nguy hiểm không?",
+        "disease": "Trầm cảm sau sinh",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Tăng huyết áp thai kỳ là gì?",
+        "disease": "Tăng huyết áp thai kỳ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tăng huyết áp thai kỳ điều trị như thế nào?",
+        "disease": "Tăng huyết áp thai kỳ",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Bệnh than là gì?",
+        "disease": "Than",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Uốn ván là bệnh gì?",
+        "disease": "Uốn ván",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư da là gì",
+        "disease": "Ung thư da",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư da có chữa được không ?",
+        "disease": "Ung thư da",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ung thư đại tràng có chữa được không?",
+        "disease": "Ung thư đại tràng",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "ung thư phổi là gì? Ung thư phổi có mấy giai đoạn, triệu chứng, nguyên nhân ung thư phổi như thế nào?",
+        "disease": "Ung thư phổi",
+        "attribute": [
+            "overview",
+            "main_type",
+            "cause",
+            "symptom"
+        ]
+    },
+    {
+        "question": "Bệnh ung thư phổi có lây không?",
+        "disease": "Ung thư phổi",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Ung thư lưỡi có triệu chứng như thế nào?",
+        "disease": "Ung thư lưỡi",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Ung thư thực quản là gì?",
+        "disease": "Ung thư thực quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư tinh hoàn có nguy hiểm không?",
+        "disease": "Ung thư tinh hoàn",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "U máu là gì?",
+        "disease": "U máu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ù tai là bệnh gì ?",
+        "disease": "Ù tai",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư dương vật là gì? ",
+        "disease": "Ung thư dương vật",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư dương vật có chữa được không?",
+        "disease": "Ung thư dương vật",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "U lympho ác tính không hodgkin có chữa được không?",
+        "disease": "U lympho không Hodgkin",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ung thư bàng quang là gì ?",
+        "disease": "Ung thư bàng quang",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Làm thế nào để phát hiện sớm ung thư bàng quang ?",
+        "disease": "Ung thư bàng quang",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "U lympho tế bào T là gì?",
+        "disease": "U lympho tế bào T",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư thận có lây không?",
+        "disease": "Ung thư thận",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Xét nghiệm nước tiểu: tổng phân tích nước tiểu giúp phát hiện có máu trong nước tiểu hay không?",
+        "disease": "Ung thư thận",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "U thực quản lành tính có thể biến chứng thành ung thư thực quản?",
+        "disease": "U thực quản",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Điều trị u thực quản lành tính như thế nào?",
+        "disease": "U thực quản",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ung thư hậu môn là tình trạng các tế bào ở ống hậu môn bị đột biến, phát triển không kiểm soát tạo nên các khối u. Ung thư hậu môn có nguy hiểm không? ",
+        "disease": "Ung thư hậu môn",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Ung thư ruột non có chữa được không?",
+        "disease": "Ung thư ruột non",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ung thư tụy là gì?",
+        "disease": "Ung thư tụy",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Các nguyên nhân ung thư tụy là gì?",
+        "disease": "Ung thư tụy",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "U tuyến nước bọt có lây không?",
+        "disease": "U tuyến nước bọt",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "U tuyến thượng thận có nguy hiểm không?",
+        "disease": "U tuyến thượng thận",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "U tuyến thượng thận có nên mổ không?",
+        "disease": "U tuyến thượng thận",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "U não là một sự tân tạo bất thường của một trong số các tế bào thần kinh, tế bào hình gai, tế bào hình sao hay nguyên tủy bào thần kinh. Vậy u não là gì? U não ở trẻ em diễn biến như thế nào?",
+        "disease": "U não ở trẻ em",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư gan là gì?",
+        "disease": "Ung thư gan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh sử cần tìm hiểu các yếu tố nguy cơ của người bệnh đã từng nhiễm virus viêm gan B, C hay cả hai? Tình trạng sử dụng rượu, bia? Đã từng tiếp xúc với độc tố hay hóa chất ?",
+        "disease": "Ung thư gan",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Ung thư túi mật có nguy hiểm không?",
+        "disease": "Ung thư túi mật",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Bác sỹ sử dụng dụng cụ nội soi qua đường miệng, thực quản xuống dạ dày và ruột non. Chất chỉ thị màu sẽ được bơm vào đường mật, sau đó bệnh nhân được chụp Xquang để quan sát sự tồn tại của khối u có hay không?",
+        "disease": "Ung thư túi mật",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Ung thư hạ họng là gì?",
+        "disease": "Ung thư hạ họng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư hạ họng có mấy giai đoạn?",
+        "disease": "Ung thư hạ họng",
+        "attribute": [
+            "main_type"
+        ]
+    },
+    {
+        "question": "Ung thư hạ họng có lây không?",
+        "disease": "Ung thư hạ họng",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Ung thư hạ họng có chữa được không?",
+        "disease": "Ung thư hạ họng",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ung thư amidan có nguy hiểm không? ",
+        "disease": "Ung thư amidan",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Ung thư thanh quản là gì?",
+        "disease": "Ung thư thanh quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư hắc tố da là gì? ",
+        "disease": "Ung thư hắc tố da",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư hắc tố có chữa được không?",
+        "disease": "Ung thư hắc tố da",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ung thư tuyến giáp là gì ?",
+        "disease": "Ung thư tuyến giáp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư tuyến giáp có nguy hiểm không?",
+        "disease": "Ung thư tuyến giáp",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Ung thư tuyến tụy là gì?",
+        "disease": "Ung thư tuyến tụy",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy ung thư tuyến tụy có chữa được không?",
+        "disease": "Ung thư tuyến tụy",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "U xơ tử cung là gì?",
+        "disease": "U xơ tử cung",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tại sao u xơ tử cung là bệnh lý phụ khoa hay gặp?",
+        "disease": "U xơ tử cung",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "U xơ tử cung có nguy hiểm không?",
+        "disease": "U xơ tử cung",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Bệnh u mạch máu gan là gì?",
+        "disease": "U mạch máu gan",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "U mạch máu gan có nguy hiểm không? ",
+        "disease": "U mạch máu gan",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Làm thế nào để ngăn ngừa nhiễm trùng lây qua đường tình dục (STIs)?",
+        "disease": "Ung thư âm hộ",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Ung thư lá lách là gì?",
+        "disease": "Ung thư lá lách",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "U màng não có nguy hiểm không? ",
+        "disease": "U màng não",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "U nang buồng trứng là gì?",
+        "disease": "U nang buồng trứng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "U nang buồng trứng có dấu hiệu và triệu chứng gì?",
+        "disease": "U nang buồng trứng",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Siêu âm có phát hiện u nang buồng trứng? ",
+        "disease": "U nang buồng trứng",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "U nang buồng trứng điều trị như thế nào?",
+        "disease": "U nang buồng trứng",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "U nang ống mật chủ có nguy hiểm không?",
+        "disease": "U nang ống mật chủ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "U tế bào vảy là gì?",
+        "disease": "Ung thư biểu mô tế bào vảy",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư biểu mô có nguy hiểm không?",
+        "disease": "Ung thư biểu mô tế bào vảy",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "U xương ác tính là gì?",
+        "disease": "U xương ác tính",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư não là gì?",
+        "disease": "Ung thư não",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "U lá lách có nguy hiểm không? ",
+        "disease": "U lách",
+        "attribute": [
+            "attribute"
+        ]
+    },
+    {
+        "question": "Liệu pháp tăng cường hệ miễn dịch tự thân giúp tăng khả năng miễn dịch cho bệnh nhân ung thư ở mức độ nào?",
+        "disease": "Ung thư vú",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "4. Ung thư vú có chữa được không?",
+        "disease": "Ung thư vú",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Ung thư biểu mô đáy có nguy hiểm không?",
+        "disease": "Ung thư biểu mô tế bào đáy",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Khối u tim là gì?",
+        "disease": "U tim",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư cổ tử cung có lây không và có di truyền không?",
+        "disease": "Ung thư cổ tử cung",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Ung thư biểu mô tại chỗ là gì?",
+        "disease": "Ung thư biểu mô tiểu thùy tại chỗ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Triệu chứng ung thư tại chỗ là gì?",
+        "disease": "Ung thư biểu mô tiểu thùy tại chỗ",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Ung thư tử cung là gì? U",
+        "disease": "Ung thư tử cung",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ung thư tử cung có triệu chứng gì?",
+        "disease": "Ung thư tử cung",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Bệnh ung thư gan nên ăn gì ? Cần tránh gì ?",
+        "disease": "Ung thư gan nguyên phát",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Ung thư biểu mô tiểu thùy xâm lấn là gì? ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm đại tràng là bệnh gì?",
+        "disease": "Viêm đại tràng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Tại sao bệnh viêm xoang khó chữa?",
+        "disease": "Viêm xoang",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Dịch ebola bắt nguồn từ đâu? ",
+        "disease": "Virus Ebola",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Bệnh viêm phế quản là gì? ",
+        "disease": "Viêm phế quản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh viêm phế quản có lây không?",
+        "disease": "Viêm phế quản",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Viêm đường hô hấp trên là gì?",
+        "disease": "Viêm đường hô hấp trên",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm họng cấp/ viêm họng có lây không?",
+        "disease": "Viêm họng cấp",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "đôi khi viêm amidan được chẩn đoán nhầm với các bệnh đường hô hấp, vậy triệu chứng, cách phòng bệnh và điều trị viêm amindan là gì?",
+        "disease": "Viêm amidan",
+        "attribute": [
+            "overview",
+            "symptom",
+            "prevention",
+            "treatment"
+        ]
+    },
+    {
+        "question": "Với tình trạng bệnh như vậy, liệu viêm amidan có cần dùng kháng sinh trong phác đồ điều trị hay không?",
+        "disease": "Viêm amidan",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Viêm bàng quang là gì?",
+        "disease": "Viêm bàng quang",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vàng da sơ sinh là gì?",
+        "disease": "Vàng da sơ sinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Làm thế nào để tôi có thể giảm thiểu rủi ro bị bệnh lây nhiễm qua đường sinh dục (STI)?",
+        "disease": "Viêm niệu đạo",
+        "attribute": [
+            "prevention"
+        ]
+    },
+    {
+        "question": "Viêm cầu thận là gì?",
+        "disease": "Viêm cầu thận",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh viêm cầu thận được chẩn đoán thế nào?",
+        "disease": "Viêm cầu thận",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Viêm da cơ địa là gì?",
+        "disease": "Viêm da cơ địa",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm tinh hoàn là biểu hiện sưng đau ở một hoặc cả hai tinh hoàn trong bìu do vi khuẩn hoặc virus gây ra. Vậy viêm tinh hoàn có nguy hiểm không?",
+        "disease": "Viêm tinh hoàn",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nếu không điều trị viêm tinh hoàn có tự khỏi không?",
+        "disease": "Viêm tinh hoàn",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Viêm khớp dạng thấp là gì?",
+        "disease": "Viêm khớp dạng thấp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm khớp dạng thấp có mấy giai đoạn ?",
+        "disease": "Viêm khớp dạng thấp",
+        "attribute": [
+            "main_type"
+        ]
+    },
+    {
+        "question": "Vô sinh nữ là gì?",
+        "disease": "Vô sinh nữ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân vô sinh ở nữ giới là gì?",
+        "disease": "Vô sinh nữ",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Điều trị vô sinh ở nữ giới như thế nào?",
+        "disease": "Vô sinh nữ",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Viêm nướu răng là gì?",
+        "disease": "Viêm nướu",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm âm đạo là gì?",
+        "disease": "Viêm âm đạo",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Cách chữa viêm âm đạo, điều trị viêm âm đạo bằng thuốc gì?",
+        "disease": "Viêm âm đạo",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Triệu chứng viêm ruột thừa như thế nào?",
+        "disease": "viêm ruột thừa",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Túi mật có chức năng gì? Nguyên nhân gây viêm túi mật",
+        "disease": "Viêm túi mật",
+        "attribute": [
+            "overview",
+            "cause"
+        ]
+    },
+    {
+        "question": "Vô sinh nam là gì?",
+        "disease": "Vô sinh nam",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh viêm cơ tim có nguy hiểm không?",
+        "disease": "Viêm cơ tim",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Viêm cơ tim có chữa được không?",
+        "disease": "Viêm cơ tim",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Viêm khớp là gì?",
+        "disease": "Viêm khớp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nguyên nhân gây viêm tuyến tiền liệt là gì?",
+        "disease": "Viêm tuyến tiền liệt",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Viêm gan B lây như thế nào?",
+        "disease": "Viêm gan B",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Viêm gan B lây qua đường nào?",
+        "disease": "Viêm gan B",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Viêm tủy xương là gì?",
+        "disease": "Viêm tủy xương",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vi khuẩn xâm nhập vào máu bằng cách nào?",
+        "disease": "Viêm tủy xương",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Điều trị viêm tủy xương như thế nào?",
+        "disease": "Viêm tủy xương",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Viêm họng mãn tính là gì?",
+        "disease": "Viêm họng mãn tính",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm họng mãn tính có chữa được không?",
+        "disease": "Viêm họng mãn tính",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Vẹo cột sống là gì?",
+        "disease": "Vẹo cột sống",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm tuyến vú điều trị thế nào?",
+        "disease": "Viêm tuyến vú",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Nguyên nhân nào gây ra bệnh viêm xương?",
+        "disease": "Viêm xương",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Vàng da bệnh lý là gì?",
+        "disease": "Vàng da bệnh lý",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vàng da bệnh lý kéo dài bao lâu?",
+        "disease": "Vàng da bệnh lý",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vàng da bệnh lý cảnh báo bệnh gì?",
+        "disease": "Vàng da bệnh lý",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Vậy viêm mũi dị ứng là gì? Bệnh viêm mũi dị ứng có nguy hiểm không?, viêm mũi dị ứng có lây không? Nguyên nhân viêm mũi dị ứng là gì?",
+        "disease": "Viêm mũi dị ứng",
+        "attribute": [
+            "overview",
+            "severity",
+            "infection",
+            "cause"
+        ]
+    },
+    {
+        "question": "Viêm cột sống dính khớp là gì?",
+        "disease": "Viêm cột sống dính khớp",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm cột sống dính khớp có di truyền không?",
+        "disease": "Viêm cột sống dính khớp",
+        "attribute": [
+            "infection"
+        ]
+    },
+    {
+        "question": "Viêm đa cơ là gì?",
+        "disease": "Viêm đa cơ",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm đường hô hấp dưới là gì?",
+        "disease": "Viêm đường hô hấp dưới",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Nhiễm khuẩn đường hô hấp dưới là gì?",
+        "disease": "Viêm đường hô hấp dưới",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Viêm xương tai chũm hay còn gọi là viêm xương chũm là gì?",
+        "disease": "Viêm xương tai chũm",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vôi hóa cột sống là gì?",
+        "disease": "Vôi hóa cột sống",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viễn thị là gì?",
+        "disease": "Viễn thị",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Buồng trứng có vai trò quan trọng đối với việc sinh sản của nữ giới. Tuy nhiên hiện nay, do sự thay đổi của môi trường và những thói quen sinh hoạt dẫn đến nhiều chị em phụ nữ mắc bệnh viêm buồng trứng. Vậy viêm buồng trứng là gì? Bệnh viêm buồng trứng có nguy hiểm không?",
+        "disease": "Viêm buồng trứng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vỡ ối non là gì?",
+        "disease": "Vỡ ối non",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Ối vỡ non có nguy cơ gì?",
+        "disease": "Vỡ ối non",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Vỡ ối non có sao không?",
+        "disease": "Vỡ ối non",
+        "attribute": [
+            "symptom"
+        ]
+    },
+    {
+        "question": "Hiện nay, do sự phát triển của xã hội, đặc biệt là công nghệ thông tin, dẫn đến xuất hiện ngày càng nhiều căn bệnh về mắt, trong đó có bệnh viêm dây thần kinh thị giác. Vậy viêm dây thần kinh thị giác là gì, cách thức điều trị bệnh như thế nào?",
+        "disease": "Viêm dây thần kinh thị giác",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vỡ tử cung là gì?",
+        "disease": "Vỡ tử cung",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh viêm khớp phản ứng là gì?",
+        "disease": "Viêm khớp phản ứng",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Bệnh viêm não Nhật Bản là tình trạng bệnh nhân bị nhiễm vi rút cấp tính làm cho thần kinh trung ương bị tổn thương, thường gặp ở trẻ em dưới 15 tuổi. Vậy viêm não Nhật Bản là gì? Triệu chứng viêm não Nhật Bản, Viêm não Nhật Bản bệnh học như thế nào? Biến chứng của viêm não Nhật Bản ra sao?",
+        "disease": "Viêm não Nhật Bản",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vô kinh là gì ?",
+        "disease": "Vô kinh",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Khai thác bệnh nhân để tìm nguyên nhân vô kinh: bệnh nhân có đang bị stress, thay đổi cân nặng, mất cân bằng trong chế độ ăn uống, luyện tập thể thao quá mức hay không ? Bệnh nhân có đang sử dụng thuốc gây vô kinh hay không ( thuốc tránh thai, thuốc an thần...). Bệnh nhân có tiền sử nạo phá thai, viêm niêm mạc tử cung không?",
+        "disease": "Vô kinh",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Bộ phận sinh dục của bệnh nhân có những vấn đề về kích thước âm vật, sự phát triển lông mu, màng trinh có lỗ thủng không, có cổ tử cung, buồng trứng không ?",
+        "disease": "Vô kinh",
+        "attribute": [
+            "diagnosis"
+        ]
+    },
+    {
+        "question": "Võng mạc là gì? ",
+        "disease": "Võng mạc",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm thanh quản là gì?",
+        "disease": "Viêm thanh quản cấp tính",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm cân gan chân là gì?",
+        "disease": "Viêm cân gan chân",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm tai giữa mãn tính là gì?",
+        "disease": "Viêm tai giữa mãn tính ở trẻ em",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Viêm tai giữa mạn tính có chữa được không?",
+        "disease": "Viêm tai giữa mãn tính ở trẻ em",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Viêm màng ối là gì?",
+        "disease": "Viêm màng ối",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Xơ vữa động mạch là gì?",
+        "disease": "Xơ vữa động mạch",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Xơ vữa động mạch nguyên nhân là gì?",
+        "disease": "Xơ vữa động mạch",
+        "attribute": [
+            "cause"
+        ]
+    },
+    {
+        "question": "Xơ vữa động mạch điều trị thế nào?",
+        "disease": "Xơ vữa động mạch",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Xẹp đốt sống là gì ?",
+        "disease": "Xẹp đốt sống",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Vậy xuất huyết võng mạc có nguy hiểm không?",
+        "disease": "Xuất huyết võng mạc",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Xuất tinh ngược là gì?",
+        "disease": "Xuất tinh ngược",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Xuất tinh ngược là như thế nào?",
+        "disease": "Xuất tinh ngược",
+        "attribute": [
+            "overview"
+        ]
+    },
+    {
+        "question": "Xuất tinh ngược có nguy hiểm không?",
+        "disease": "Xuất tinh ngược",
+        "attribute": [
+            "severity"
+        ]
+    },
+    {
+        "question": "Chữa xuất tinh ngược như thế nào?",
+        "disease": "xuất tinh ngược",
+        "attribute": [
+            "treatment"
+        ]
+    },
+    {
+        "question": "Biểu hiện xơ gan cổ trướng như thế nào?",
+        "disease": "xơ gan cổ trướng",
+        "attribute": [
+            "symptom"
+        ]
+    }
+]
