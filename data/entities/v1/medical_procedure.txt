@@ -1,0 +1,129 @@
+châm cứu
+chụp bàng quang
+chụp ct/mri đầu
+chụp cắt lớp
+chụp nhũ ảnh
+chụp não
+chụp pet
+chụp pet-ct
+chụp sọ
+chụp tinh hoàn
+chụp uiv
+chụp x-quang
+chụp x-quang khớp
+ct scan cổ
+cận lâm sàng
+dsa mạch máu
+ecg
+ghi điện não
+hbsag
+hirtz
+ivp
+huyết thanh học
+huyết tủy đồ
+huyết đồ
+hình ảnh x-quang
+hô hấp ký
+ion đồ
+khoét chóp ctc
+kỹ thuật tiêm
+lactat máu
+laser liệu pháp
+laser quang đông
+liệu pháp hormone
+liệu pháp laser
+liệu pháp statin
+loại sóng ngắn
+ly tâm
+làm ion đồ
+làm sinh thiết
+mantoux
+monitor
+monitor sản khoa
+máy làm ẩm
+máy nhuộm da
+mô bệnh học
+mô sinh thiết
+nitrazine test
+novalis
+nội soi mũi
+pcr
+pcr lao
+pet
+pet-ct
+phim blondeau
+phim hirtz
+phân tích gen
+phương pháp mgit
+phản ứng tuberculin
+scan
+siêu âm
+siêu âm bìu
+siêu âm khớp
+siêu âm thai
+siêu âm vú
+soi niệu đạo
+soi phế quản
+soi trực tràng
+soi tử cung
+soi ổ bụng
+sóng q
+sóng t
+test coombs
+test hiv
+test lẩy da
+test mantoux
+test prostigmin
+test trong da
+thuỷ châm
+thôi miên
+thông tim
+thăm trực tràng
+thở máy
+thử nghiệm coombs
+thử nghiệm histamine
+thử đờm
+tia lazer
+trendelenburg
+triple test
+uiv
+uvb
+uvb phổ hẹp
+vdrl
+rpr
+x quang
+x quang phổi
+x-quang hộp sọ
+x-quang ngực
+warfarin
+x-quang
+xquang
+xquang ngực
+xquang phổi
+xquang tim phổi
+xquang xương
+xét nghiệm
+xét nghiệm anticardiolipin
+xét nghiệm aslo
+xét nghiệm ft4
+xét nghiệm hb
+xét nghiệm mantoux
+xét nghiệm máu
+xét nghiệm nipt
+xét nghiệm Non-stress test
+xét nghiệm pap
+nt-probnp
+đeo kính
+đeo nẹp hàm
+điện cơ đồ
+điện di
+điện giải đồ
+điện tim thường
+đo màng nhĩ
+đo thị lực
+đo điện cơ
+đoạn st dẹt
+hạt latex
+định lượng canxi
+định lượng crp
+định lượng hormone

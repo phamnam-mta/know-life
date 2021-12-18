@@ -11,21 +11,20 @@ This repo support Entity Linking (EL) for KB systems
 ```
 git clone https://github.com/dmis-lab/BioSyn.git
 ```
-2. Install packages
+2. Installation
+
 ```
 pip install -r requirements.txt
 ```
+3. Download checkpoint
+
+- Download NER Checkpoint in [here](https://drive.google.com/drive/folders/111ThBNm1B744V5WnsQDU64ou5oAyK9j_?usp=sharing)
+
+- Copy downloaded checkpoint into `./ckpt` folder
+
 ## Usage
 ### 1.1 Informative QA
 
 ```
-cd src
-python inference_engine.py    
-
+python example.py    
 ```
-## Crawl data
-- TBD
-
-## Build KB
-
-TBD
