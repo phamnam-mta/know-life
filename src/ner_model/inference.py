@@ -15,6 +15,7 @@ from transformers import (
     BertConfig
 )
 import os
+import glob
 import torch
 import numpy as np
 
@@ -33,6 +34,7 @@ class Inference:
         self.tokenizer = load_tokenizer(self.args)
         print('****loaded tokenizer****')
         # print(self.slot_label_map)
+        # print(glob.glob(path_args + '/*'))
         
         self.config_class, self.model_class, _ = MODEL_CLASSES[self.args.model_type]
         self.config = self.config_class.from_pretrained(self.args.model_dir, finetuning_task="syllable")
