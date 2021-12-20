@@ -138,5 +138,6 @@ dmypy.json
 # models
 /models
 
-# MAC
+# files system
 .DS_Store
+.vscode/
