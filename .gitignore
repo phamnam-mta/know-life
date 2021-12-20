@@ -137,3 +137,6 @@ dmypy.json
 
 # models
 /models
+
+# MAC
+.DS_Store
