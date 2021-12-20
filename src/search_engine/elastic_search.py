@@ -1,11 +1,11 @@
 from typing import Text, Dict, List
 from elasticsearch import AsyncElasticsearch
-from search_engine import ELASTICSEARCH_URL
-from utils.constants import QA_INDEX, QA_QUERY_FIELDS
+from src import ELASTICSEARCH_URL
+from src.utils.constants import QA_INDEX, QA_QUERY_FIELDS
 
 class ESKnowLife():
-    def __init__(self, index=QA_INDEX) -> None:
-        self.es =  AsyncElasticsearch(hosts=ELASTICSEARCH_URL)
+    def __init__(self, es_url=ELASTICSEARCH_URL, index=QA_INDEX) -> None:
+        self.es =  AsyncElasticsearch(hosts=es_url)
         self.index = index
 
     def elastic_to_qa(self, raw_data):

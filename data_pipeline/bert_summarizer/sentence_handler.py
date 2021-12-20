@@ -1,7 +1,7 @@
 from typing import List
 
-from utils.normalizer import text_normalize
-from utils.tokenizer import sentences_seg
+from src.utils.normalizer import text_normalize
+from src.utils.tokenizer import sentences_seg
 
 class SentenceHandler(object):
 

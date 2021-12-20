@@ -2,7 +2,7 @@ import os
 import json
 import asyncio
 from tqdm import tqdm
-from search_engine.elastic_search import ESKnowLife
+from src.search_engine.elastic_search import ESKnowLife
 
 WORK_DIR = os.path.abspath(os.getcwd())
 NEG_PAGE_SIZE = 5

@@ -2,8 +2,8 @@ import json
 import os
 from tqdm import tqdm
 from sentence_handler import SentenceHandler
-from utils.tokenizer import words_seg
-from utils.normalizer import text_normalize
+from src.utils.tokenizer import words_seg
+from src.utils.normalizer import text_normalize
 
 WORK_DIR = os.path.abspath(os.getcwd())
 sentence_handler = SentenceHandler()
