@@ -28,13 +28,18 @@ class InferenceEngine:
         # - ner_response (dict) : {
         #     'disease' : ['relations']
         # }
-        ner_response = self.ner(question)
+        ner_response = self.ner.inference(question)
+        # print(ner_response)
 
         # is_safe == False TODO
-        for resp in ner_response:
-            for k,v in resp.items():
-                answer = self.get_entity_by_relation(k,v)
-                result.append(answer)
+        # for resp in ner_response:
+        #     for k,v in resp.items():
+        #         answer = self.get_entity_by_relation(k,v)
+        #         result.append(answer)
+        for k,v in ner_response.items():
+            answer = self.get_entity_by_relation(k,v)
+            result.append(answer)
+        # print(f'results : {answer}')
 
         return result
     

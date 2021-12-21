@@ -5,13 +5,13 @@ from fuzzywuzzy import fuzz
 
 def read_txt(path):
     data = []
-    with open(path) as f:
+    with open(path, 'r', encoding='utf-8') as f:
         for line in f:
             data.append(line.replace('\n',''))
     return data
 
 def read_json(path):
-    with open(path) as f:
+    with open(path, 'r', encoding='utf8') as f:
         data = json.load(f)
     return data
 

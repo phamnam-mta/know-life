@@ -15,6 +15,7 @@ from transformers import (
     BertConfig
 )
 import os
+import glob
 import torch
 import numpy as np
 
@@ -29,16 +30,21 @@ class Inference:
         self.args.data_dir = data_dir
         self.slot_label_lst = get_slot_labels(self.args)
         self.slot_label_map = {i: label for i, label in enumerate(self.slot_label_lst)}
-        
+        # print(self.args.model_dir)
         self.tokenizer = load_tokenizer(self.args)
+        print('****loaded tokenizer****')
+        # print(self.slot_label_map)
+        # print(glob.glob(path_args + '/*'))
         
         self.config_class, self.model_class, _ = MODEL_CLASSES[self.args.model_type]
         self.config = self.config_class.from_pretrained(self.args.model_dir, finetuning_task="syllable")
+        # print(self.config)
+        
 
         self.model = self.model_class.from_pretrained(path_args, config=self.config, args=self.args, slot_label_lst=self.slot_label_lst)
         print("***** Model Loaded *****")
         
-        self.device = self.args.device
+        self.device = 'cpu'
 
         self.model.to(self.device)
         self.model.eval()
@@ -57,7 +63,7 @@ class Inference:
             inputs["token_type_ids"] = token_type_ids
         outputs = self.model(**inputs)[1]
         slot_list = self.convert_logit_to_entity(outputs)
-        print(slot_list)
+        # print(slot_list)
         diseases, attributes = self.get_disease_attribute(slot_list, tokens)
         return {
             diseases[0][0]: attributes
