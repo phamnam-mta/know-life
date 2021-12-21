@@ -1,9 +1,10 @@
 transformers==4.11.3
-tqdm
-numpy
 torch==1.6.0
 seqeval==0.0.12
 pytorch-crf==0.7.2
-tensorflow==2.2.0
+sentence-transformers==2.1.0
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.12.2
 sentencepiece
-tensorboard
+tqdm
+numpy

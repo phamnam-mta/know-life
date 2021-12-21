@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# elasticsearch
+/esdata
+/data
+
+# env
+.env
+
+# models
+/models
+
+# files system
+.DS_Store
+.vscode/
