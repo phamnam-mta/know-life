@@ -7,7 +7,8 @@ def is_relevant_string( str1,
                         str2,
                         remove_accent=False,
                         method=['exact','fuzzy','include'],
-                        score=60):
+                        score=80,
+                        return_score=False):
     '''
     1. Extract Match 
     2. Compare 2 str by fuzzy
@@ -20,20 +21,26 @@ def is_relevant_string( str1,
     # 1. extract match
     if 'exact' in method:
         if str1.lower() == str2.lower():
+            if return_score:
+                return True,100
             return True
 
     # 2. fuzzy match
     if 'fuzzy' in method:
         ratio = fuzz.ratio(str1.lower(),str2.lower())
         if ratio  > score:
+            if return_score:
+                return True, fuzz.ratio(str1.lower(),str2.lower())
             return True
     
     # 3. include match
     if 'include' in method:
         if str1 in str2 or str2 in str1:
+            if return_score:
+                return True, 100
             return True
     
-    return False
+    return False, 0
 
 def remove_accents(s):
     s = re.sub(r'[àáạảãâầấậẩẫăằắặẳẵ]', 'a', s)

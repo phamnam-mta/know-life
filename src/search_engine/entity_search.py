@@ -24,36 +24,36 @@ class EntitySearch():
         self.database = read_json(database_path)
         self.relations = read_txt(relation_path)
 
-        self.ner = BERTEntityExtractor(
-            model_dir=model_dir, data_dir=data_dir)
+        # self.ner = BERTEntityExtractor(
+        #     model_dir=model_dir, data_dir=data_dir)
 
     def query(self, question):
         '''
         Args:
             - quesion (str) : utterance
-
+        Return:
+            result (dict) { 
+                "answers" (list) ,
+                "ner_response" (list of dict),
+                "answer_dislay" (list): 
+            }
         '''
         answers = []
-
-        # - ner_response (dict) : {
-        #     'disease' : ['relations']
-        # }
+        answer_dislay = []
+        
         ner_response = self.ner.inference(question)
-        #print(ner_response)
 
-        # is_safe == False TODO
-        # for resp in ner_response:
-        #     for k,v in resp.items():
-        #         answer = self.get_entity_by_relation(k,v)
-        #         answers.append(answer)
         for k, v in ner_response.items():
-            answer = self.get_entity_by_relation(k, v)
+            answer = self.get_entity_by_relation(k, v) # list
             answers.append(answer)
-        # print(f'answers : {answers}')
+
+            prettier_answer = self.get_prettier_answer(answer)
+            answer_dislay.append(prettier_answer)
 
         result = {
             "answers": answers,
-            "ner_response": ner_response
+            "ner_response": ner_response,
+            "answer_dislay" : answer_dislay
         }
 
         return result
@@ -66,17 +66,12 @@ class EntitySearch():
             - result (str)
         '''
         result = []
-        length_cnt = 0
-        accept_redundant_length = max_answer_length // 3
-        for sentence in answer:
-            length_cnt += len(sentence)
-            if length_cnt > max_answer_length + accept_redundant_length:
-                if result == []:
-                    result.append(sentence)
-                break
-            result.append(sentence)
 
-        result = ' . '.join(result)
+        # if end-half contains ":"
+        # if ':' in answer[0][len(answer[0])//2:]:
+        #     result = answer[0] + ' ' + '<br>'.join(answer[1:]) 
+        # else:
+        result = '<br>'.join(answer)
 
         return result
 
@@ -102,23 +97,33 @@ class EntitySearch():
 
             result.append(val)
 
-        # Re-ranking based on disease: TODO
-
         return result
 
     def query_single_entity(self, entity, relation):
-        result = ""
+        results = []
+        scores = []
 
+        result = ""
+        
         for sample in self.database:
-            if is_relevant_string(sample['disease'],entity,method=['exact','fuzzy','include']):
+            is_relevant, score =  is_relevant_string(sample['disease'],entity,method=['exact','fuzzy'],return_score=True)
+            if is_relevant:
                 for att in sample['attributes']:
                     if att['attribute'] == relation:
                         # short content
-                        try:
-                            result = att['short_content']
-                        except:
-                            result = att['content']
+                        # try:
+                        #     result = att['short_content']
+                        # except:
+                        #     result = att['content']
 
-                        return result
+                        result = att['content']
+
+                        results.append(result)
+                        scores.append(score)
+        # Re-ranking
+        if len(results) >= 1:
+            max_score_index = scores.index(max(scores))
+
+            result = results[max_score_index]
+
         return result
-
