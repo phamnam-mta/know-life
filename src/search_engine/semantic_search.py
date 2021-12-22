@@ -1,3 +1,4 @@
+import logging
 from typing import Text, List
 from src.search_engine.elastic_search import ESKnowLife
 from src.nlu import BERTRanker
@@ -7,10 +8,13 @@ from src.utils.constants import (
     QA_MODEL_DIR,
     ResponseAttribute
 )
+
+logger = logging.getLogger(__name__)
 class SemanticSearch():
     def __init__(self, model_path=QA_MODEL_DIR, es_url=ELASTICSEARCH_URL, index=QA_INDEX) -> None:
         self.retrieval = ESKnowLife(es_url, index)
         self.ranker = BERTRanker(model_path)
+        logger.info("Ranking Model loaded")
 
     async def search(self, question: Text, to_return=ResponseAttribute.ALL, page_size=0, page_index=20):
         es_data = await self.retrieval.get_qa_pairs(question, page_size, page_index)

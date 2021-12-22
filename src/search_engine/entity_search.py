@@ -119,13 +119,3 @@ class EntitySearch():
                         return result
         return result
 
-
-if __name__ == '__main__':
-    inference_engine = InferenceEngine()
-    entites = ['thalas', 'máu nhiễm mỡ', 'rối loạn tiền đình']
-    relations = ['description', 'symptoms', 'cause']
-    for ent, rel in zip(entites, relations):
-        answer = inference_engine.search([ent], [rel])
-        print(f'Entity : {ent} , Relation : {rel}')
-        print(answer)
-        print('=================')
