@@ -17,7 +17,7 @@ class SemanticSearch():
         logger.info("Ranking Model loaded")
 
     async def search(self, question: Text, to_return=ResponseAttribute.ALL, page_size=0, page_index=20):
-        es_data = await self.retrieval.get_qa_pairs(question, page_size, page_index)
+        es_data = await self.retrieval.get_qa_pairs(question, page_index, page_size)
         pairs = self.retrieval.elastic_to_qa(es_data)
 
         candidates = [p["summary"] for p in pairs]
@@ -31,7 +31,7 @@ class SemanticSearch():
 
             re_ranking = [{
                 "id": pairs[i]["id"],
-                "score": scores[i],
+                "score": str(scores[i]),
                 "answer": pairs[i]["answer_display"]
             } for i in ranking]
         else:
@@ -43,7 +43,7 @@ class SemanticSearch():
 
             re_ranking = [{
                 "id": pairs[i]["id"],
-                "score": scores[i],
+                "score": str(scores[i]),
                 "question": pairs[i]["question"],
                 "answer": pairs[i]["answer_display"]
             } for i in ranking]

@@ -39,7 +39,7 @@ class Agent():
             database_path=database_path, 
             relation_path=relation_path, 
             model_dir=kb_model_dir,
-            data_dir=kb_data_dir)
+            data_dir=kb_data_dir,)
         self.semantic_search = SemanticSearch(qa_model_dir, es_url, index)
         self.elastic_search = ESKnowLife(es_url, index)
 
@@ -69,8 +69,8 @@ class Agent():
 
     @agent_must_be_ready
     def search_by_entity(self, text: Text):
-        answers = self.entity_search.query(text)        
-        return answers
+        resp = self.entity_search.query(text)        
+        return resp
 
     @agent_must_be_ready
     async def search_by_semantic(self, text: Text, to_return= ResponseAttribute.ALL, page_size=0, page_index=20):

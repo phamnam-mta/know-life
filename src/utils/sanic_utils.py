@@ -34,41 +34,21 @@ from socket import SOCK_DGRAM, SOCK_STREAM
 logger = logging.getLogger(__name__)
 
 def configure_file_logging(
-    logger_obj: logging.Logger,
-    log_file: Optional[Text],
-    use_syslog: Optional[bool],
-    syslog_address: Optional[Text] = None,
-    syslog_port: Optional[int] = None,
-    syslog_protocol: Optional[Text] = None,
+    logger_obj: logging.Logger, log_file: Optional[Text]
 ) -> None:
     """Configure logging to a file.
     Args:
         logger_obj: Logger object to configure.
         log_file: Path of log file to write to.
-        use_syslog: Add syslog as a logger.
-        syslog_address: Adress of the syslog server.
-        syslog_port: Port of the syslog server.
-        syslog_protocol: Protocol with the syslog server
     """
-    if use_syslog:
-        formatter = logging.Formatter(
-            "%(asctime)s [%(levelname)-5.5s] [%(process)d]" " %(message)s"
-        )
-        socktype = SOCK_STREAM if syslog_protocol == TCP_PROTOCOL else SOCK_DGRAM
-        syslog_handler = logging.handlers.SysLogHandler(
-            address=(syslog_address, syslog_port), socktype=socktype,
-        )
-        syslog_handler.setLevel(logger_obj.level)
-        syslog_handler.setFormatter(formatter)
-        logger_obj.addHandler(syslog_handler)
-    if log_file:
-        formatter = logging.Formatter("%(asctime)s [%(levelname)-5.5s]  %(message)s")
-        file_handler = logging.FileHandler(
-            log_file, encoding=DEFAULT_ENCODING
-        )
-        file_handler.setLevel(logger_obj.level)
-        file_handler.setFormatter(formatter)
-        logger_obj.addHandler(file_handler)
+    if not log_file:
+        return
+
+    formatter = logging.Formatter("%(asctime)s [%(levelname)-5.5s]  %(message)s")
+    file_handler = logging.FileHandler(log_file, encoding=DEFAULT_ENCODING)
+    file_handler.setLevel(logger_obj.level)
+    file_handler.setFormatter(formatter)
+    logger_obj.addHandler(file_handler)
 
 
 def number_of_sanic_workers() -> int:

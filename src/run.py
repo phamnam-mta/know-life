@@ -27,17 +27,20 @@ from src.utils.constants import (
     QA_INDEX,
     QA_MODEL_DIR,
 )
-
-logger = logging.getLogger()
+logging.basicConfig()
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 def configure_app(
     cors: Optional[Union[Text, List[Text], None]] = None,
     auth_token: Optional[Text] = None,
     response_timeout: int = DEFAULT_RESPONSE_TIMEOUT,
     jwt_secret: Optional[Text] = None,
-    jwt_method: Optional[Text] = None
+    jwt_method: Optional[Text] = None,
+    log_file: Optional[Text] = None,
 ) -> Sanic:
     """Run the agent."""
+    sanic_utils.configure_file_logging(logger, log_file)
 
     app = server.create_app(
         cors_origins=cors,

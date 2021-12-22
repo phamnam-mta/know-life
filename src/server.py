@@ -19,7 +19,7 @@ from sanic_cors import CORS
 from sanic_jwt import Initialize, exceptions
 from src.agent import Agent
 
-from src.utils.constants import DEFAULT_RESPONSE_TIMEOUT
+from src.utils.constants import DEFAULT_RESPONSE_TIMEOUT, MAX_ANSWER_LENGTH
 
 logger = logging.getLogger(__name__)
 
@@ -180,7 +180,7 @@ def create_app(
 
     @app.post('/semantic_search')
     @ensure_loaded_agent(app)
-    def semantic_search(request: Request):
+    async def semantic_search(request: Request):
         validate_request_body(
                 request,
                 "No question defined in request body. Add a question to the request body in "
@@ -200,7 +200,7 @@ def create_app(
             )
 
         try:
-            re_ranking, es_ranking = app.agent.search_by_semantic(question, page_size=page_size, page_index=page_index)
+            re_ranking, es_ranking = await app.agent.search_by_semantic(question, page_size=page_size, page_index=page_index)
             response_data = {
                 "es_ranking": es_ranking,
                 "re_ranking": re_ranking
@@ -210,7 +210,40 @@ def create_app(
             logger.debug(traceback.format_exc())
             raise ErrorResponse(
                 500,
-                "TrainingError",
+                "SearchingError",
                 f"An unexpected error occurred during searching. Error: {e}",
             )
+
+    @app.post('/entity_search')
+    @ensure_loaded_agent(app)
+    def entity_search(request: Request):
+        validate_request_body(
+                request,
+                "No question defined in request body. Add a question to the request body in "
+                "order to add it to the tracker.",
+            )
+
+        input_data = request.json
+        question = input_data.get("question")
+        #max_answer_length = input_data.get("max_answer_length", MAX_ANSWER_LENGTH)
+
+        if not question:
+            raise ErrorResponse(
+                HTTPStatus.BAD_REQUEST,
+                "BadRequest",
+                f"The request is missing the required parameter `question`."
+            )
+
+        try:
+            response_data = app.agent.search_by_entity(question)
+            return response.json(response_data)
+        except Exception as e:
+            logger.debug(traceback.format_exc())
+            raise ErrorResponse(
+                500,
+                "SearchingError",
+                f"An unexpected error occurred during searching. Error: {e}",
+            )
+
+
     return app

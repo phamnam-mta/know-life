@@ -10,7 +10,7 @@ from src.utils.constants import (
     KB_DEFAULT_MODEL_DIR,
     KB_DEFAULT_DATA_DIR,
     KB_DATABASE_PATH,
-    KB_RELATION_PATH
+    KB_RELATION_PATH,
 )
 
 
@@ -19,14 +19,10 @@ class EntitySearch():
         database_path=KB_DATABASE_PATH, 
         relation_path=KB_RELATION_PATH, 
         model_dir=KB_DEFAULT_MODEL_DIR,
-        data_dir=KB_DEFAULT_DATA_DIR,
-        max_answer_length=MAX_ANSWER_LENGTH):
+        data_dir=KB_DEFAULT_DATA_DIR):
 
         self.database = read_json(database_path)
         self.relations = read_txt(relation_path)
-
-        self.max_answer_length = max_answer_length
-        self.accept_redundant_length = max_answer_length // 3
 
         self.ner = BERTEntityExtractor(
             model_dir=model_dir, data_dir=data_dir)
@@ -37,27 +33,32 @@ class EntitySearch():
             - quesion (str) : utterance
 
         '''
-        result = []
+        answers = []
 
         # - ner_response (dict) : {
         #     'disease' : ['relations']
         # }
         ner_response = self.ner.inference(question)
-        # print(ner_response)
+        #print(ner_response)
 
         # is_safe == False TODO
         # for resp in ner_response:
         #     for k,v in resp.items():
         #         answer = self.get_entity_by_relation(k,v)
-        #         result.append(answer)
+        #         answers.append(answer)
         for k, v in ner_response.items():
             answer = self.get_entity_by_relation(k, v)
-            result.append(answer)
-        # print(f'results : {answer}')
+            answers.append(answer)
+        # print(f'answers : {answers}')
+
+        result = {
+            "answers": answers,
+            "ner_response": ner_response
+        }
 
         return result
 
-    def get_prettier_answer(self, answer):
+    def get_prettier_answer(self, answer, max_answer_length=MAX_ANSWER_LENGTH):
         ''' Format/Prettier answer
         Args:
             - answer (list of str)
@@ -66,9 +67,10 @@ class EntitySearch():
         '''
         result = []
         length_cnt = 0
+        accept_redundant_length = max_answer_length // 3
         for sentence in answer:
             length_cnt += len(sentence)
-            if length_cnt > self.max_answer_length + self.accept_redundant_length:
+            if length_cnt > max_answer_length + accept_redundant_length:
                 if result == []:
                     result.append(sentence)
                 break
