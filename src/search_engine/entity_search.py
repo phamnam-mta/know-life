@@ -24,8 +24,8 @@ class EntitySearch():
         self.database = read_json(database_path)
         self.relations = read_txt(relation_path)
 
-        # self.ner = BERTEntityExtractor(
-        #     model_dir=model_dir, data_dir=data_dir)
+        self.ner = BERTEntityExtractor(
+            model_dir=model_dir, data_dir=data_dir)
 
     def query(self, question):
         '''

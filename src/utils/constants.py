@@ -9,7 +9,8 @@ KB_DEFAULT_MODEL_DIR = "models/bert_extractor"
 KB_DEFAULT_DATA_DIR = "data/kb"
 KB_DATABASE_PATH = "data/kb/data.json"
 KB_RELATION_PATH = "data/kb/relations.txt"
-
+NOT_FOUND_ENTITY = "KB chưa cập nhật quan hệ này"
+TEST_DIR = "data/kb/testcases.csv"
 
 # semantic search
 from enum import Enum
