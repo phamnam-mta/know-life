@@ -40,20 +40,21 @@ class EntitySearch():
         '''
         answers = []
         answer_dislay = []
+        kb_answer = []
         
         ner_response = self.ner.inference(question)
 
         for k, v in ner_response.items():
-            answer = self.get_entity_by_relation(k, v) # list
+            answer, prettier_answer, kb_response = self.get_entity_by_relation(k, v) # list
             answers.append(answer)
-
-            prettier_answer = self.get_prettier_answer(answer)
+            kb_answer.append(kb_response)
             answer_dislay.append(prettier_answer)
 
         result = {
             "answers": answers,
             "ner_response": ner_response,
-            "answer_dislay" : answer_dislay
+            "answer_dislay" : answer_dislay,
+            "kb_response" : kb_answer
         }
 
         return result
@@ -71,7 +72,9 @@ class EntitySearch():
         # if ':' in answer[0][len(answer[0])//2:]:
         #     result = answer[0] + ' ' + '<br>'.join(answer[1:]) 
         # else:
-        result = '<br>'.join(answer)
+
+        if answer != []:
+            result = '<br>'.join(answer)
 
         return result
 
@@ -82,31 +85,40 @@ class EntitySearch():
             - entity (str) : 
             - relation (list of relation) :  
         Return:
-            - result (list of str)
+            - result (str)
+            - prettier_answer (str)
+            - kb_response (list)
         '''
         result = []
-        is_correct_relation = True
-
-        # if relation not in self.relations:
-        #     warnings.warn("Relations does not fit relation datatabase. Activate fuzzy match for relation .")
-        #     is_correct_relation = False
+        prettier_answer = []
+        kb_response = []
 
         for rel in relation:
-            val = self.query_single_entity(entity, rel)
-            val = self.get_prettier_answer(val)
+            val, kb_answer = self.query_single_entity(entity, rel)
+            pret_answer = self.get_prettier_answer(val)
+            prettier_answer.append(pret_answer)
+            result.extend(val)
+            kb_response.append(kb_answer)
 
-            result.append(val)
+        prettier_answer = '.'.join(prettier_answer)
+        result = '.'.join(result)
 
-        return result
+        return result , prettier_answer, kb_response
 
     def query_single_entity(self, entity, relation):
+        '''
+        Return:
+            - result (list)
+            - kb_answer (list)
+        '''
         results = []
         scores = []
+        kb_answer = []
 
         result = ""
         
         for sample in self.database:
-            is_relevant, score =  is_relevant_string(sample['disease'],entity,method=['exact','fuzzy'],return_score=True)
+            is_relevant, score =  is_relevant_string(sample['disease'],entity,method=['exact','fuzzy','include'],return_score=True)
             if is_relevant:
                 for att in sample['attributes']:
                     if att['attribute'] == relation:
@@ -120,10 +132,19 @@ class EntitySearch():
 
                         results.append(result)
                         scores.append(score)
+                        kb_answer.append((sample['disease'],att['attribute'],score))
+                        
         # Re-ranking
         if len(results) >= 1:
-            max_score_index = scores.index(max(scores))
+            THRESHOLD = 80
+            
+            score_index = [i[0] for i in sorted(enumerate(scores), key=lambda x:-x[1])]
+            
+            result = [results[i] for i in score_index]
 
-            result = results[max_score_index]
+            if scores[score_index[0]] >= THRESHOLD:
+                result = result[0]
+        
+        kb_answer = sorted(kb_answer, key=lambda x: -x[2])
 
-        return result
+        return result, kb_answer

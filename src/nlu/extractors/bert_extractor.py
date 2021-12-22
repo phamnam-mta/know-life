@@ -147,7 +147,8 @@ class BERTEntityExtractor():
                         continue
             if not diseases:
                 diseases = ["not_disease"]
-            preds_attr.append("\t".join(pred_attr))
+            # preds_attr.append("\t".join(pred_attr))
+            preds_attr.extend(pred_attr)
             preds_disease.append(diseases)
         return preds_disease, preds_attr
 
