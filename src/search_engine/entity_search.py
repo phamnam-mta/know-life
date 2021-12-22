@@ -4,6 +4,7 @@ import warnings
 from src.utils.io import *
 from src.utils.kb_utils import *
 from src.nlu import BERTEntityExtractor
+from src.utils.kb_utils import is_relevant_string
 from src.utils.constants import (
     MAX_ANSWER_LENGTH,
     KB_DEFAULT_MODEL_DIR,
@@ -107,7 +108,7 @@ class EntitySearch():
         result = ""
 
         for sample in self.database:
-            if sample['disease'] == entity:
+            if is_relevant_string(sample['disease'],entity,method=['exact','fuzzy','include']):
                 for att in sample['attributes']:
                     if att['attribute'] == relation:
                         # short content
