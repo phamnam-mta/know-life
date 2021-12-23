@@ -151,7 +151,7 @@ if __name__ == "__main__":
     user = "neo4j"
     password = "password"
     app = KnowledgeGraph(url, user, password)
-    DATA = read_json('../data/data.json')
+    DATA = read_json('../data/kb/data.json')
 
     # create disease
     app.build_database(DATA)
