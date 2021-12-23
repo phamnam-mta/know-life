@@ -1,6 +1,6 @@
 # elasticsearch
 QA_INDEX='qa'
-QA_QUERY_FIELDS = [ "question", "answer" ]
+QA_QUERY_FIELDS = [ "question", "answer", "answer_display" ]
 KB_INDEX='kb'
 
 # entity search
@@ -11,13 +11,17 @@ KB_DATABASE_PATH = "data/kb/data.json"
 KB_RELATION_PATH = "data/kb/relations.txt"
 NOT_FOUND_ENTITY = "KB chưa cập nhật quan hệ này"
 TEST_DIR = "data/kb/testcases.csv"
+ENTITY = "disease"
 
 # semantic search
 from enum import Enum
 class ResponseAttribute(Enum):
     ALL = 1
     ANSWER = 2
-
+class SearchMethod(Enum):
+    ES = "elastic"
+    SM = "semantic"
+    EE = "entity"
 QA_MODEL_DIR = "models/ranking"
 
 # server

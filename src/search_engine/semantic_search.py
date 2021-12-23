@@ -16,36 +16,53 @@ class SemanticSearch():
         self.ranker = BERTRanker(model_path)
         logger.info("Ranking Model loaded")
 
-    async def search(self, question: Text, to_return=ResponseAttribute.ALL, page_size=0, page_index=20):
+    async def search(self, question: Text, to_return=ResponseAttribute.ALL.value, page_size=0, page_index=20):
         es_data = await self.retrieval.get_qa_pairs(question, page_index, page_size)
         pairs = self.retrieval.elastic_to_qa(es_data)
 
         candidates = [p["summary"] for p in pairs]
         ranking, scores = self.ranker.re_ranking(question, candidates)
 
-        if to_return == ResponseAttribute.ANSWER:
+        if to_return == ResponseAttribute.ANSWER.value:
             es_ranking = [{
                 "id": p["id"],
-                "answer": p["answer_display"]
+                "question": p["question"],
+                "answer": p["answer_display"],
+                "highlight": {
+                    "question": p["highlight"].get("question"),
+                    "answer": p["highlight"].get("answer_display")
+                }
             } for p in pairs]
 
             re_ranking = [{
                 "id": pairs[i]["id"],
                 "score": str(scores[i]),
-                "answer": pairs[i]["answer_display"]
+                "answer": pairs[i]["answer_display"],
+                "highlight": {
+                    "question": pairs[i]["highlight"].get("question"),
+                    "answer": pairs[i]["highlight"].get("answer_display")
+                }
             } for i in ranking]
         else:
             es_ranking = [{
                 "id": p["id"],
                 "question": p["question"],
-                "answer": p["answer_display"]
+                "answer": p["answer_display"],
+                "highlight": {
+                    "question": p["highlight"].get("question"),
+                    "answer": p["highlight"].get("answer_display")
+                }
             } for p in pairs]
 
             re_ranking = [{
                 "id": pairs[i]["id"],
                 "score": str(scores[i]),
                 "question": pairs[i]["question"],
-                "answer": pairs[i]["answer_display"]
+                "answer": pairs[i]["answer_display"],
+                "highlight": {
+                    "question": pairs[i]["highlight"].get("question"),
+                    "answer": pairs[i]["highlight"].get("answer_display")
+                }
             } for i in ranking]
 
         return re_ranking, es_ranking

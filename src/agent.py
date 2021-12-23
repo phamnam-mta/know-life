@@ -73,7 +73,12 @@ class Agent():
         return resp
 
     @agent_must_be_ready
-    async def search_by_semantic(self, text: Text, to_return= ResponseAttribute.ALL, page_size=0, page_index=20):
+    async def search_by_semantic(self, text: Text, to_return= ResponseAttribute.ALL.value, page_size=0, page_index=20):
         re_ranking, es_ranking = await self.semantic_search.search(text, to_return=to_return, page_size=page_size, page_index=page_index)
         return re_ranking, es_ranking
+
+    @agent_must_be_ready
+    async def search_by_elastic(self, text: Text, page_size=0, page_index=20):
+        es_ranking = await self.elastic_search.search(text, page_size=page_size, page_index=page_index)
+        return es_ranking
     

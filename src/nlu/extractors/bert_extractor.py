@@ -48,7 +48,6 @@ class BERTEntityExtractor():
         outputs = self.model(**inputs)[1]
         slot_list = self.convert_logit_to_entity(outputs)
         # print(slot_list)
-        print(slot_list)
         predictions = self.get_disease_attribute(slot_list, tokens, attention_mask)
         return predictions
         

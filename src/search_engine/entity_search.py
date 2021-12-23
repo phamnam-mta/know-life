@@ -1,4 +1,5 @@
 import os
+from typing import List, Text
 import warnings
 
 from src.utils.io import *
@@ -11,6 +12,7 @@ from src.utils.constants import (
     KB_DEFAULT_DATA_DIR,
     KB_DATABASE_PATH,
     KB_RELATION_PATH,
+    ENTITY
 )
 
 
@@ -38,28 +40,51 @@ class EntitySearch():
                 "answer_dislay" (list): 
             }
         '''
-        answers = []
-        answer_dislay = []
-        kb_answer = []
-        
-        ner_response = self.ner.inference(question)
-
-        for k, v in ner_response.items():
-            answer, prettier_answer, kb_response = self.get_entity_by_relation(k, v) # list
-            answers.append(answer)
-            kb_answer.append(kb_response)
-            answer_dislay.append(prettier_answer)
-
-        result = {
-            "answers": answers,
-            "ner_response": ner_response,
-            "answer_dislay" : answer_dislay,
-            "kb_response" : kb_answer
-        }
+        entities = self.ner.inference(question)
+        entity_relation = self.to_entity_relation(entities)
+        result = []
+        index = 0
+        for k, v in entity_relation.items():
+            _, prettier_answer, score = self.get_entity_by_relation(k, v) # list
+            highlight_terms = [vl["value"] for vl in v if vl["value"]]
+            highlight_terms.append(k)
+            result.append({
+                "id": index,
+                "score": score,
+                "question": question,
+                "answer_dislay" : prettier_answer,
+                "highlight": {
+                    "question": [self.get_highlight(question, highlight_terms)],
+                    "answer_dislay": [self.get_highlight(prettier_answer, highlight_terms)],
+                },
+            })
+            index += 1
 
         return result
 
-    def get_prettier_answer(self, answer, max_answer_length=MAX_ANSWER_LENGTH):
+    def get_highlight(self, text: Text, terms: List):
+        highlight = text
+        for t in terms:
+            t = f" {t} "
+            highlight = highlight.replace(t, f"<em>{t}</em>")
+        return highlight
+
+    def to_entity_relation(self, entities: List):
+        entity_relation = {}
+        diseases = [e["value"] for e in entities if e["key"] == ENTITY]
+        if diseases:
+            for e in entities:
+                if e["key"] != ENTITY:
+                    for d in diseases:
+                        if not entity_relation.get(d):
+                            entity_relation[d] = [e]
+                        else:
+                            entity_relation[d].append(e)
+        return entity_relation
+
+
+
+    def get_prettier_answer(self, answer, relation):
         ''' Format/Prettier answer
         Args:
             - answer (list of str)
@@ -67,14 +92,8 @@ class EntitySearch():
             - result (str)
         '''
         result = []
-
-        # if end-half contains ":"
-        # if ':' in answer[0][len(answer[0])//2:]:
-        #     result = answer[0] + ' ' + '<br>'.join(answer[1:]) 
-        # else:
-
         if answer != []:
-            result = '<br>'.join(answer)
+            result = f"<br>{relation.title()}:<br>" + "<br>".join(answer)
 
         return result
 
@@ -89,21 +108,22 @@ class EntitySearch():
             - prettier_answer (str)
             - kb_response (list)
         '''
-        result = []
+        answers = []
         prettier_answer = []
-        kb_response = []
+        scores = []
 
         for rel in relation:
-            val, kb_answer = self.query_single_entity(entity, rel)
-            pret_answer = self.get_prettier_answer(val)
-            prettier_answer.append(pret_answer)
-            result.extend(val)
-            kb_response.append(kb_answer)
+            val, score = self.query_single_entity(entity, rel["key"])
+            answer = "\n".join(val)
+            answer_display = self.get_prettier_answer(val, rel["value"])
+            answers.append(answer)
+            prettier_answer.append(answer_display)
+            scores.append(score)
 
-        prettier_answer = '.'.join(prettier_answer)
-        result = '.'.join(result)
+        answers = '.'.join(answers)
+        prettier_answer = ''.join(prettier_answer)
 
-        return result , prettier_answer, kb_response
+        return answers, prettier_answer, scores
 
     def query_single_entity(self, entity, relation):
         '''
