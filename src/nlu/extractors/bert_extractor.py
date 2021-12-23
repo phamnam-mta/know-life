@@ -132,7 +132,13 @@ class BERTEntityExtractor():
                 'key': entity[0],
                 'value': value
             })
-        print(predictions)
+        # print(predictions)
+        if len(predictions) == 1 and predictions[0]['key'] == 'disease':
+            predictions.append({
+                'key': 'overview',
+                'value': ''
+            })
+
         return predictions
     def post_process_disease(self, text):
         text = text.replace('@@ ', '')
