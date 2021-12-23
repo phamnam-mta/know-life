@@ -19,7 +19,7 @@ from sanic_cors import CORS
 from sanic_jwt import Initialize, exceptions
 from src.agent import Agent
 
-from src.utils.constants import DEFAULT_RESPONSE_TIMEOUT, MAX_ANSWER_LENGTH
+from src.utils.constants import DEFAULT_RESPONSE_TIMEOUT, SearchMethod
 
 logger = logging.getLogger(__name__)
 
@@ -191,6 +191,7 @@ def create_app(
         question = input_data.get("question")
         page_size = input_data.get("page_size", 20)
         page_index = input_data.get("page_index", 0)
+        method = input_data.get("search_method", SearchMethod.ES.value)
 
         if not question:
             raise ErrorResponse(
@@ -200,11 +201,14 @@ def create_app(
             )
 
         try:
-            re_ranking, es_ranking = await app.agent.search_by_semantic(question, page_size=page_size, page_index=page_index)
-            response_data = {
-                "es_ranking": es_ranking,
-                "re_ranking": re_ranking
-            }
+            if method == SearchMethod.ES.value:
+                es_ranking = await app.agent.search_by_elastic(question, page_size=page_size, page_index=page_index)
+                response_data = es_ranking
+            elif method == SearchMethod.SM.value:
+                re_ranking, _ = await app.agent.search_by_semantic(question, page_size=page_size, page_index=page_index)
+                response_data = re_ranking
+            else:
+                response_data = app.agent.search_by_entity(question)
             return response.json(response_data)
         except Exception as e:
             logger.debug(traceback.format_exc())

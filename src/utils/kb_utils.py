@@ -35,7 +35,10 @@ def is_relevant_string( str1,
     
     # 3. include match
     if 'include' in method:
-        if str1 in str2 or str2 in str1:
+        str1 = str1.lower().split(' ')
+        str2 = str2.lower().split(' ')
+        overlap_str = list(set(str2) & set(str1))
+        if len(overlap_str) >= len(str1) // 2 + 1:
             if return_score:
                 return True, 100
             return True

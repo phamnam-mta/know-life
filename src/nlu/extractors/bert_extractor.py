@@ -2,6 +2,7 @@ import torch
 import numpy as np
 
 from src.nlu.extractors.utils import MODEL_CLASSES, get_args, load_tokenizer, get_slot_labels
+from seqeval.metrics.sequence_labeling import get_entities
 
 
 class BERTEntityExtractor():
@@ -47,10 +48,8 @@ class BERTEntityExtractor():
         outputs = self.model(**inputs)[1]
         slot_list = self.convert_logit_to_entity(outputs)
         # print(slot_list)
-        diseases, attributes = self.get_disease_attribute(slot_list, tokens)
-        return {
-            diseases[0][0]: attributes
-        }
+        predictions = self.get_disease_attribute(slot_list, tokens, attention_mask)
+        return predictions
         
         
     def process_data(self, text):
@@ -110,46 +109,38 @@ class BERTEntityExtractor():
                 slot_list[i].append(self.slot_label_map[outputs[i][j]])
         return slot_list
     
-    def get_disease_attribute(self, slot_preds, tokens):
-        preds_attr = []
-        preds_disease = []
-        for slot_pred in slot_preds:
-            slot_disease = []
-            pred_attr = []
-            for value in slot_pred:
-                if 'disease' not in value:
-                    slot_disease.append('O')
-                else:
-                    slot_disease.append(value)
-                if value != 'O' and value != 'UNK' and 'disease' not in value:
-                    pred_attr.append(value.split('-')[-1])
-            if pred_attr:
-                pred_attr = np.unique(pred_attr).tolist()
-            else:
-                pred_attr = ['overview']
-            diseases = []
-            tmp = []
-            for value, sub_token in zip(slot_disease, tokens):
-                if 'B' in value and not tmp:
-                    tmp.append(sub_token)
-                elif 'B' in value and tmp:
-                    print(tmp)
-                    diseases.append(" ".join(tmp))
-                    tmp = []
-                elif 'I' in value:
-                    tmp.append(sub_token)
-                else:
-                    if tmp:
-                        print(tmp)
-                        diseases.append(" ".join(tmp))
-                        tmp = []
-                    else:
-                        continue
-            if not diseases:
-                diseases = ["not_disease"]
-            # preds_attr.append("\t".join(pred_attr))
-            preds_attr.extend(pred_attr)
-            preds_disease.append(diseases)
-        return preds_disease, preds_attr
+    def get_disease_attribute(self, slot_preds, tokens, attention_mask):
+        predictions = []
+        seq_in = []
+        seq_out = []
+        for s, t, a in zip(slot_preds[0][1:], tokens[1:], attention_mask[0][1:]):
+            if a == 1:
+                seq_in.append(t)
+                seq_out.append(s)
+        seq_in = seq_in[:-1]
+        seq_out = seq_out[:-1]
+#         print(seq_in)
+#         print(seq_out)
+        entitys = get_entities(seq_out)
+#         print(entitys)
+        for entity in entitys:
+            value = seq_in[entity[1]: entity[2]+1]
+            value = " ".join(value)
+            value = self.post_process_disease(value)
+            predictions.append({
+                'key': entity[0],
+                'value': value
+            })
+        # print(predictions)
+        if len(predictions) == 1 and predictions[0]['key'] == 'disease':
+            predictions.append({
+                'key': 'overview',
+                'value': ''
+            })
+
+        return predictions
+    def post_process_disease(self, text):
+        text = text.replace('@@ ', '')
+        return text
 
         
