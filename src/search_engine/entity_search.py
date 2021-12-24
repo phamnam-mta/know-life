@@ -12,7 +12,8 @@ from src.utils.constants import (
     KB_DEFAULT_DATA_DIR,
     KB_DATABASE_PATH,
     KB_RELATION_PATH,
-    ENTITY
+    ENTITY,
+    SYNONYM_KEY
 )
 
 
@@ -42,6 +43,7 @@ class EntitySearch():
         '''
         entities = self.ner.inference(question)
         entity_relation = self.to_entity_relation(entities)
+        
         result = []
         index = 0
         for k, v in entity_relation.items():
@@ -136,9 +138,15 @@ class EntitySearch():
         kb_answer = []
 
         result = ""
-        
+
         for sample in self.database:
-            is_relevant, score =  is_relevant_string(sample['disease'],entity,method=['exact','fuzzy','include'],return_score=True)
+            if SYNONYM_KEY in sample:
+                for synonym in sample[SYNONYM_KEY]:
+                    is_relevant, score = is_relevant_string(synonym,entity,method=['exact','fuzzy','include'],return_score=True)
+                    if is_relevant:
+                        break
+            else:
+                is_relevant, score = is_relevant_string(sample['disease'],entity,method=['exact','fuzzy','include'],return_score=True)
             if is_relevant:
                 for att in sample['attributes']:
                     if att['attribute'] == relation:

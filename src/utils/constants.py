@@ -12,6 +12,7 @@ KB_RELATION_PATH = "data/kb/relations.txt"
 NOT_FOUND_ENTITY = "KB chưa cập nhật quan hệ này"
 TEST_DIR = "data/kb/testcases.csv"
 ENTITY = "disease"
+SYNONYM_KEY = "synonym"
 
 # semantic search
 from enum import Enum
