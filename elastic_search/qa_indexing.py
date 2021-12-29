@@ -14,7 +14,7 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import streaming_bulk
 
 WORK_DIR = os.path.abspath(os.getcwd())
-DATASET_PATH = join(WORK_DIR, "data/qa/es_data.json")
+DATASET_PATH = join(WORK_DIR, "data/qa/es_data_with_covid.json")
 
 
 def create_index(client):
