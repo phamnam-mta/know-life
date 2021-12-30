@@ -5,7 +5,7 @@ import warnings
 from src.utils.io import *
 from src.utils.kb_utils import *
 from src.nlu import BERTEntityExtractor
-from src.utils.kb_utils import is_relevant_string
+from src.utils.kb_utils import is_relevant_string, get_fuzzy_score
 from src.utils.constants import (
     MAX_ANSWER_LENGTH,
     KB_DEFAULT_MODEL_DIR,
@@ -27,6 +27,27 @@ class EntitySearch():
         self.database = read_json(database_path)
         self.relations = read_txt(relation_path)
 
+        import pandas as pd
+        
+        disease = []
+        supported_attributes = []
+
+        for sample in self.database:
+            disease.append(sample['disease'])
+            tmp = []
+            for att in sample['attributes']:
+                tmp.append(att['attribute'])
+            
+            tmp = ' ;'.join(tmp)
+            supported_attributes.append(tmp)
+        
+        df = pd.DataFrame({
+            'disease' : disease,
+            'supported_attributes' : supported_attributes
+        })
+        
+        df.to_csv('kb.csv')
+
         self.ner = BERTEntityExtractor(
             model_dir=model_dir, data_dir=data_dir)
 
@@ -43,7 +64,7 @@ class EntitySearch():
         '''
         entities = self.ner.inference(question)
         entity_relation = self.to_entity_relation(entities)
-        
+
         result = []
         index = 0
         for k, v in entity_relation.items():
@@ -119,8 +140,10 @@ class EntitySearch():
             answer = "\n".join(val)
             answer_display = self.get_prettier_answer(val, rel["value"])
             answers.append(answer)
-            prettier_answer.append(answer_display)
             scores.append(score)
+            
+            if answer_display != []:
+                prettier_answer.append(answer_display)
 
         answers = '.'.join(answers)
         prettier_answer = ''.join(prettier_answer)
@@ -160,19 +183,43 @@ class EntitySearch():
 
                         results.append(result)
                         scores.append(score)
-                        kb_answer.append((sample['disease'],att['attribute'],score))
-                        
+                        kb_answer.append([sample['disease'],att['attribute'],score])
+
         # Re-ranking
-        if len(results) >= 1:
-            THRESHOLD = 80
-            
-            score_index = [i[0] for i in sorted(enumerate(scores), key=lambda x:-x[1])]
-            
-            result = [results[i] for i in score_index]
-
-            if scores[score_index[0]] >= THRESHOLD:
-                result = result[0]
+        result, kb_answer = self.reranking(kb_answer,results,entity)
         
-        kb_answer = sorted(kb_answer, key=lambda x: -x[2])
-
         return result, kb_answer
+    
+    def reranking(self,kb_answer,results,entity):
+        ''' Reranking the extracted answers from KB
+            Get first
+        Args: 
+            - kb_answer (list) : [('U não', 'treatment', 100), ('U màng não', 'treatment', 100)]
+            - results (list) : 
+            - entity (str)
+        Return:
+            - result ()
+        '''
+
+        max_score = 0
+        reranked_kb_result = []
+        result = []
+
+        if len(results) >= 1:
+            for (triplet_sample, response_text) in zip(kb_answer,results):
+                disease = triplet_sample[0]
+                fuzz_score = get_fuzzy_score(disease,entity)
+                triplet_sample[-1] = fuzz_score
+
+                if fuzz_score > max_score:
+                    max_score = fuzz_score
+                    result = response_text
+                    # append at the beginning
+                    reranked_kb_result = [triplet_sample,*reranked_kb_result] 
+                else:
+                    reranked_kb_result.append(triplet_sample)
+        else:
+            result = results
+            reranked_kb_result = kb_answer
+
+        return result, reranked_kb_result
