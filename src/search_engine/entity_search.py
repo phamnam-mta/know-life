@@ -161,7 +161,6 @@ class EntitySearch():
         kb_answer = []
 
         result = ""
-
         for sample in self.database:
             if SYNONYM_KEY in sample:
                 for synonym in sample[SYNONYM_KEY]:
