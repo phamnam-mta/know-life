@@ -27,27 +27,6 @@ class EntitySearch():
         self.database = read_json(database_path)
         self.relations = read_txt(relation_path)
 
-        import pandas as pd
-        
-        disease = []
-        supported_attributes = []
-
-        for sample in self.database:
-            disease.append(sample['disease'])
-            tmp = []
-            for att in sample['attributes']:
-                tmp.append(att['attribute'])
-            
-            tmp = ' ;'.join(tmp)
-            supported_attributes.append(tmp)
-        
-        df = pd.DataFrame({
-            'disease' : disease,
-            'supported_attributes' : supported_attributes
-        })
-        
-        df.to_csv('kb.csv')
-
         self.ner = BERTEntityExtractor(
             model_dir=model_dir, data_dir=data_dir)
 
