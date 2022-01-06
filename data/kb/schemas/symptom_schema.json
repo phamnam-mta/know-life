@@ -26,6 +26,23 @@
           "author"
         ]
       },
+      "synonym": {
+          "type": "array",
+          "items": [
+              {
+                  "type": "string"
+              },
+              {
+                  "type": "string"
+              },
+              {
+                  "type": "string"
+              },
+              {
+                  "type": "string"
+              }
+          ]
+      },
       "overview": {
         "type": "string"
       },
@@ -37,6 +54,7 @@
       "key",
       "name",
       "thumbnail",
-      "reference"
+      "reference",
+      "synonym"
     ]
   }
