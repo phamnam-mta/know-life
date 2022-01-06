@@ -1,0 +1,7 @@
+{
+    "key": "khoá định danh",
+    "key_type": "khoá định danh của loại quan hệ",
+    "source_key": "khoá định danh của điểm nguồn mối quan hệ",
+    "destination_key": "khoá định danh của điểm đích mối quan hệ",
+    "description": "bệnh tiểu đường gây ra triệu trứng đau bàng quang"
+}
