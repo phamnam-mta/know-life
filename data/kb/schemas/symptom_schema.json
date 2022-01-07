@@ -1,60 +1,60 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "object",
-    "properties": {
-      "key": {
-        "type": "string"
-      },
-      "name": {
-        "type": "string"
-      },
-      "thumbnail": {
-        "type": "string"
-      },
-      "reference": {
-        "type": "object",
-        "properties": {
-          "source": {
-            "type": "string"
-          },
-          "author": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "source",
-          "author"
-        ]
-      },
-      "synonym": {
-          "type": "array",
-          "items": [
-              {
-                  "type": "string"
-              },
-              {
-                  "type": "string"
-              },
-              {
-                  "type": "string"
-              },
-              {
-                  "type": "string"
-              }
-          ]
-      },
-      "overview": {
-        "type": "string"
-      },
-      "cause": {
-        "type": "string"
-      }
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string"
     },
-    "required": [
-      "key",
-      "name",
-      "thumbnail",
-      "reference",
-      "synonym"
-    ]
-  }
+    "name": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "author"
+      ]
+    },
+    "synonym": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "overview": {
+      "type": "string"
+    },
+    "cause": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "key",
+    "name",
+    "thumbnail",
+    "reference",
+    "synonym"
+  ]
+}
