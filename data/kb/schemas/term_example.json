@@ -1,5 +1,6 @@
 {
-    "key": "khoá định danh",
+    "id": "khoá định danh",
+    "source_id": "khoá định danh nguồn của từ thuật ngữ",
     "name": "tiểu đường",
     "type": "disease"
 }
