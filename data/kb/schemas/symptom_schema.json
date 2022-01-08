@@ -52,6 +52,9 @@
     },
     "cause": {
       "type": "string"
+    },
+    "update_by": {
+        "type": "string"
     }
   },
   "required": [

@@ -2,11 +2,11 @@
     "id": "khoá định danh",
     "name": "tiểu đường",
     "thumbnail": "",
-    "reference": {
+    "reference": [{
         "source": "https://www.msdmanuals.com/vi/chuy%C3%AAn-gia/r%E1%BB%91i-lo%E1%BA%A1n-da-li%E1%BB%85u/ti%E1%BA%BFp-c%E1%BA%ADn-%C4%91%E1%BB%91i-v%E1%BB%9Bi-b%E1%BB%87nh-nh%C3%A2n-da-li%E1%BB%85u/%C4%91%C3%A1nh-gi%C3%A1-b%E1%BB%87nh-nh%C3%A2n-da-li%E1%BB%85u",
         "author": "Elizabeth H. Page , MD, Harvard Medical School",
         "viewed": "20/10/2021"
-    },
+    }],
     "synonym": [
         "tiểu đường",
         "đái tháo đường",
@@ -17,8 +17,11 @@
     "cause": "Một yếu tố làm tăng nguy cơ bệnh đái tháo đường. \nBéo phì làm tăng nguy cơ đái tháo đường",
     "symptom": "Hầu hết các triệu chứng ban đầu của bệnh đái tháo đường là mức glucose trong máu cao hơn bình thường.",
     "infection": "1. Khả năng lây nhiễm qua đường tiếp xúc",
-    "riskfactor": "Đường huyết lúc đói (FPG): Bạn sẽ cần nhịn ăn ít nhất 8 giờ trước khi thử nghiệm này.",
+    "risk_factor": "Đường huyết lúc đói (FPG): Bạn sẽ cần nhịn ăn ít nhất 8 giờ trước khi thử nghiệm này.",
     "treatment": "Bệnh đái tháo đường có thể được điều trị bằng nhiều phương pháp",
     "diagnosis": "Chẩn đoán tiền đái tháo đường khi có một trong các rối loạn sau đây:",
-    "prevention": "Bệnh đái tháo đường có thể không được ngăn ngừa trong mọi trường hợp."
+    "prevention": "Bệnh đái tháo đường có thể không được ngăn ngừa trong mọi trường hợp.",
+    "severity": "mức độ nghiêm trọng",
+    "other_info": "",
+    "update_by": "NamPH"
 }

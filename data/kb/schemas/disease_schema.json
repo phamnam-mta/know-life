@@ -1,90 +1,107 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "string"
-        },
-        "name": {
-            "type": "string"
-        },
-        "thumbnail": {
-            "type": "string"
-        },
-        "reference": {
-            "type": "object",
-            "properties": {
-                "source": {
-                    "type": "string"
-                },
-                "author": {
-                    "type": "string"
-                },
-                "viewed": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "source",
-                "author",
-                "viewed"
-            ]
-        },
-        "synonym": {
-            "type": "array",
-            "items": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "overview": {
-            "type": "string"
-        },
-        "cause": {
-            "type": "string"
-        },
-        "symptom": {
-            "type": "string"
-        },
-        "infection": {
-            "type": "string"
-        },
-        "riskfactor": {
-            "type": "string"
-        },
-        "treatment": {
-            "type": "string"
-        },
-        "diagnosis": {
-            "type": "string"
-        },
-        "prevention": {
-            "type": "string"
-        }
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
     },
-    "required": [
-        "id",
-        "name",
-        "thumbnail",
-        "reference",
-        "synonym",
-        "overview",
-        "cause",
-        "symptom",
-        "infection",
-        "riskfactor",
-        "treatment",
-        "diagnosis",
-        "prevention"
-    ]
+    "name": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "author": {
+              "type": "string"
+            },
+            "viewed": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "source",
+            "author",
+            "viewed"
+          ]
+        }
+      ]
+    },
+    "synonym": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "overview": {
+      "type": "string"
+    },
+    "cause": {
+      "type": "string"
+    },
+    "symptom": {
+      "type": "string"
+    },
+    "infection": {
+      "type": "string"
+    },
+    "risk_factor": {
+      "type": "string"
+    },
+    "treatment": {
+      "type": "string"
+    },
+    "diagnosis": {
+      "type": "string"
+    },
+    "prevention": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "other_info": {
+      "type": "string"
+    },
+    "update_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "thumbnail",
+    "reference",
+    "synonym",
+    "overview",
+    "cause",
+    "symptom",
+    "infection",
+    "risk_factor",
+    "treatment",
+    "diagnosis",
+    "prevention",
+    "severity",
+    "other_info",
+    "update_by"
+  ]
 }
