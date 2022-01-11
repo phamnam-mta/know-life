@@ -1,10 +1,11 @@
 {
-    "key": "khoá định danh",
-    "name": "đau đầu",
+    "id": "khoá định danh",
+    "name": "sốt cao",
     "thumbnail": "",
     "reference": {
         "source": "https://www.msdmanuals.com/vi/chuy%C3%AAn-gia/r%E1%BB%91i-lo%E1%BA%A1n-da-li%E1%BB%85u/ti%E1%BA%BFp-c%E1%BA%ADn-%C4%91%E1%BB%91i-v%E1%BB%9Bi-b%E1%BB%87nh-nh%C3%A2n-da-li%E1%BB%85u/%C4%91%C3%A1nh-gi%C3%A1-b%E1%BB%87nh-nh%C3%A2n-da-li%E1%BB%85u",
-        "author": "Elizabeth H. Page , MD, Harvard Medical School"
+        "author": "Elizabeth H. Page , MD, Harvard Medical School",
+        "viewed": "20/10/2021"
     },
     "synonym": [
         "tiểu đường",
@@ -13,5 +14,6 @@
         "đường trong máu"
     ],
     "overview": "tổng quan",
-    "cause": "Một yếu tố làm tăng nguy cơ bệnh đái tháo đường. \nBéo phì làm tăng nguy cơ đái tháo đường"
+    "cause": "Một yếu tố làm tăng nguy cơ bệnh đái tháo đường. \nBéo phì làm tăng nguy cơ đái tháo đường",
+    "update_by": "NamPH"
 }

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "key": {
+    "id": {
       "type": "string"
     },
     "name": {
@@ -19,11 +19,15 @@
         },
         "author": {
           "type": "string"
+        },
+        "viewed": {
+          "type": "string"
         }
       },
       "required": [
         "source",
-        "author"
+        "author",
+        "viewed"
       ]
     },
     "synonym": {
@@ -48,13 +52,18 @@
     },
     "cause": {
       "type": "string"
+    },
+    "update_by": {
+        "type": "string"
     }
   },
   "required": [
-    "key",
+    "id",
     "name",
     "thumbnail",
     "reference",
-    "synonym"
+    "synonym",
+    "overview",
+    "cause"
   ]
 }
