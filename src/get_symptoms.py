@@ -9,15 +9,11 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 import re
 from dict_hash import sha256
 from tqdm import tqdm
-
-def read_json(path):
-    with open(path) as f:
-        DATA = json.load(f) 
-    return DATA
+from utils import load_json
 
 class SymptomBuilder:
     def __init__(self, database_url):
-        self.database = read_json(database_url)
+        self.database = load_json(database_url)
 
     def resolution_symptoms(self):
         pass
@@ -30,11 +26,6 @@ class SymptomBuilder:
 
     def get_stats(self):
         pass
-
-def remove_ref_tag(str):
-    str = re.sub("(?<=\[)(.*?)(?=\])", "", str)
-    str = str.replace('[]',' ')
-    return str
 
 def get_attribute_dict(s):
     ''' From disease (s) to result (dict)
