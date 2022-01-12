@@ -1,8 +1,8 @@
 {
     "id": "khoá định danh",
-    "type": "loại quan hệ",
-    "source_id": "khoá định danh của điểm nguồn mối quan hệ",
-    "destination_id": "khoá định danh của điểm đích mối quan hệ",
-    "description": "bệnh tiểu đường gây ra triệu trứng đau bàng quang",
+    "type": "disease_symptom",
+    "source_id": "disease_1",
+    "destination_id": "symptom_1",
+    "description": "Hầu hết các triệu chứng ban đầu của bệnh đái tháo đường là mức glucose trong máu cao hơn bình thường.",
     "update_by": "NamPH"
 }

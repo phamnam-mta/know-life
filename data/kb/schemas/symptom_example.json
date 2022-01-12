@@ -1,6 +1,6 @@
 {
-    "id": "khoá định danh",
-    "name": "sốt cao",
+    "id": "symptom_1",
+    "name": "glucose trong máu cao",
     "thumbnail": "",
     "reference": {
         "source": "https://www.msdmanuals.com/vi/chuy%C3%AAn-gia/r%E1%BB%91i-lo%E1%BA%A1n-da-li%E1%BB%85u/ti%E1%BA%BFp-c%E1%BA%ADn-%C4%91%E1%BB%91i-v%E1%BB%9Bi-b%E1%BB%87nh-nh%C3%A2n-da-li%E1%BB%85u/%C4%91%C3%A1nh-gi%C3%A1-b%E1%BB%87nh-nh%C3%A2n-da-li%E1%BB%85u",
