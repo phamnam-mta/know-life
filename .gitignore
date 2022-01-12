@@ -133,6 +133,7 @@ dmypy.json
 
 # models
 /models
+/esdata
 
 # files system
 .DS_Store
