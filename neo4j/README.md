@@ -1,3 +1,4 @@
+![image](asset/graph.png)
 ## Installation
 1. Package
 ```
