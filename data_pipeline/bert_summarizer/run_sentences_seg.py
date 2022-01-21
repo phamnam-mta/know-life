@@ -10,7 +10,7 @@ sentence_handler = SentenceHandler()
 
 if __name__ == "__main__":
     print("Loading dataset...")
-    with open(os.path.join(WORK_DIR, "data/qa/QA.json"), "r") as file:
+    with open(os.path.join(WORK_DIR, "data/qa/kb/kb_qa.json"), "r") as file:
         data = json.load(file)
     
     print("Segment sentences...")
@@ -21,5 +21,5 @@ if __name__ == "__main__":
         except Exception as e:
             print(e)
             print(d)
-    with open(os.path.join(WORK_DIR, "data/qa/QA_sent.json"), "w") as file:
+    with open(os.path.join(WORK_DIR, "data/qa/kb/kb_qa_sent.json"), "w") as file:
         json.dump(data, file, ensure_ascii=False, indent=4)

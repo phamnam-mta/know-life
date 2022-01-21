@@ -15,19 +15,21 @@ def main():
     custom_model = AutoModel.from_pretrained('vinai/phobert-base', config=custom_config)
     model = Summarizer(custom_model=custom_model, custom_tokenizer=custom_tokenizer, sentence_handler=SentenceHandler())
 
-    print("Loading dataset...")
-    with open(os.path.join(WORK_DIR, "data/qa/QA.json"), "r") as file:
+    with open("./data/QA_sent.json") as file:
         data = json.load(file)
-    
-    print("Summarizing...")
+
     for d in tqdm(data):
         try:
-            d["summary"] = model(d["answer"], num_sentences=5)
+            if len(d["sentences"]) > 5:
+                sents, _ = model.cluster_runner(d["sentences"], num_sentences=5)
+                d["summary"] = sents
+            else:
+                d["summary"] = d["sentences"]
         except Exception as e:
             print(d)
             print(e)
-
-    with open(os.path.join(WORK_DIR, "data/qa/QA_summary.json"), "w") as file:
+            
+    with open("./data/QA_summary.json", "w") as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
