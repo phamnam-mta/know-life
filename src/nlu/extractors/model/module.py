@@ -22,3 +22,12 @@ class SlotClassifier(nn.Module):
         x = self.linear_slot(x)
         x = self.dropout(x)
         return self.linear(x)
+
+class Classifier(nn.Module):
+    def __init__(self, input_dim, num_label ,dropout_rate=0.2):
+        super().__init__()
+        self.linear = nn.Linear(input_dim, num_label)
+        self.dropout = nn.Dropout(dropout_rate)
+    def forward(self, x):
+        x  = self.dropout(x)
+        return self.linear(x)
