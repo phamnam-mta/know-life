@@ -1,7 +1,10 @@
+import re
+
 import torch
+import torch.nn as nn
 import numpy as np
 
-from src.nlu.extractors.utils import MODEL_CLASSES, get_args, load_tokenizer, get_slot_labels
+from src.nlu.extractors.utils import MODEL_CLASSES, get_args, load_tokenizer, get_slot_labels, get_intent_labels
 from seqeval.metrics.sequence_labeling import get_entities
 
 
@@ -12,21 +15,28 @@ class BERTEntityExtractor():
   
         self.args.data_dir = data_dir
         self.args.model_dir = model_dir
+
+        self.intent_label_lst = get_intent_labels(self.args)
+        self.intent_label_map = {i: label for i, label in enumerate(self.intent_label_lst)}
+
         self.slot_label_lst = get_slot_labels(self.args)
         self.slot_label_map = {i: label for i, label in enumerate(self.slot_label_lst)}
-        # print(self.args.model_dir)
+
         self.tokenizer = load_tokenizer(self.args)
         print('****loaded tokenizer****')
-        # print(self.slot_label_map)
-        # print(glob.glob(path_args + '/*'))
         
         self.config_class, self.model_class, _ = MODEL_CLASSES[self.args.model_type]
         self.config = self.config_class.from_pretrained(self.args.model_dir, finetuning_task="syllable")
-        # print(self.config)
         
-
-        self.model = self.model_class.from_pretrained(model_dir, config=self.config, args=self.args, slot_label_lst=self.slot_label_lst)
+        self.model = self.model_class.from_pretrained(self.args.model_dir,
+                                                config=self.config,
+                                                args=self.args,
+                                                slot_label_lst=self.slot_label_lst,
+                                                label_lst=self.intent_label_lst
+                                                )
         print("***** Model Loaded *****")
+
+        self.sigmoid_fct = nn.Sigmoid()
         
         self.device = 'cpu'
 
@@ -34,6 +44,7 @@ class BERTEntityExtractor():
         self.model.eval()
         
     def inference(self, text):
+        text = self.padding_punct(text)
         input_ids, attention_mask, token_type_ids, tokens = self.process_data(text)
         input_ids = input_ids.to(self.device)
         attention_mask = attention_mask.to(self.device)
@@ -45,12 +56,20 @@ class BERTEntityExtractor():
                 }
         if self.args.model_type != "distilbert":
             inputs["token_type_ids"] = token_type_ids
+
         outputs = self.model(**inputs)[1]
-        slot_list = self.convert_logit_to_entity(outputs)
-        # print(slot_list)
-        predictions = self.get_disease_attribute(slot_list, tokens, attention_mask)
+#         print(outputs)
+
+        intent_logit = outputs[0]
+#         print(intent_logit)
+        intent_list = self.convert_logit_to_intent(intent_logit)
+
+        slot_logit = outputs[1]
+        slot_list = self.convert_logit_to_entity(slot_logit)
+
+        predictions = self.prediction(slot_list, tokens, attention_mask, intent_list)
         return predictions
-        
+
         
     def process_data(self, text):
          # Setting based on the current model type
@@ -98,6 +117,17 @@ class BERTEntityExtractor():
         token_type_ids = torch.tensor([token_type_ids], dtype=torch.long)
         attention_mask = torch.tensor([attention_mask], dtype=torch.long)
         return input_ids, attention_mask, token_type_ids, tokens
+
+    def convert_logit_to_intent(self, outputs):
+        outputs = self.sigmoid_fct(outputs).detach().cpu().numpy()
+        outputs = np.where(outputs > self.args.threshold, 1, 0)
+#         print(outputs)
+        intent_list = [[] for _ in range(outputs.shape[0])]
+        for i in range(outputs.shape[0]):
+            for idx, j in enumerate(range(outputs.shape[1])):
+                if outputs[i][j] == 1:
+                    intent_list[i].append(self.intent_label_map[idx])
+        return intent_list
     
     def convert_logit_to_entity(self, outputs):
         outputs = outputs.detach().cpu().numpy()
@@ -109,8 +139,12 @@ class BERTEntityExtractor():
                 slot_list[i].append(self.slot_label_map[outputs[i][j]])
         return slot_list
     
-    def get_disease_attribute(self, slot_preds, tokens, attention_mask):
-        predictions = []
+    def prediction(self, slot_preds, tokens, attention_mask, intent_list):
+        predictions = {
+            'disease': [],
+            'symp': [],
+            'intent': [],
+        }
         seq_in = []
         seq_out = []
         for s, t, a in zip(slot_preds[0][1:], tokens[1:], attention_mask[0][1:]):
@@ -127,20 +161,18 @@ class BERTEntityExtractor():
             value = seq_in[entity[1]: entity[2]+1]
             value = " ".join(value)
             value = self.post_process_disease(value)
-            predictions.append({
-                'key': entity[0],
-                'value': value
-            })
-        # print(predictions)
-        if len(predictions) == 1 and predictions[0]['key'] == 'disease':
-            predictions.append({
-                'key': 'overview',
-                'value': ''
-            })
-
+            predictions[entity[0].lower()].append(value)
+        predictions["intent"] = intent_list[0]
         return predictions
     def post_process_disease(self, text):
         text = text.replace('@@ ', '')
+        text = text.replace(' ##', '')
         return text
+
+    def padding_punct(self, s):
+        s = re.sub('([.,!?()])', r' \1 ', s)
+        s = re.sub('\s{2,}', ' ', s)
+        s = s.strip().lower()
+        return s
 
         

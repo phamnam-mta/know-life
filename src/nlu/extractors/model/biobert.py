@@ -5,14 +5,15 @@ from torchcrf import CRF
 # from transformers.models.xlm_roberta.modeling_xlm_roberta import XLMRobertaModel
 from transformers import BertPreTrainedModel, BertModel
 
-from .module import SlotClassifier
+from .module import SlotClassifier, Classifier
 
 
-class BioBERT_NER(BertPreTrainedModel):
-    def __init__(self, config, args, slot_label_lst):
-        super(BioBERT_NER, self).__init__(config)
+class BioBERT(BertPreTrainedModel):
+    def __init__(self, config, args, slot_label_lst, label_lst):
+        super(BioBERT, self).__init__(config)
         self.args = args
         self.num_slot_labels = len(slot_label_lst)
+        self.num_labels = len(label_lst)
         self.bert = BertModel(config)  # Load pretrained bert
 
         self.slot_classifier = SlotClassifier(
@@ -21,26 +22,33 @@ class BioBERT_NER(BertPreTrainedModel):
             self.args.attention_embedding_size,
             args.dropout_rate,
         )
+        self.classifier = Classifier(
+                    config.hidden_size,
+                    self.num_labels,
+                    args.dropout_rate,
+                )
 
         if args.use_crf:
             self.crf = CRF(num_tags=self.num_slot_labels, batch_first=True)
 
-    def forward(self, input_ids, attention_mask, token_type_ids=None, slot_labels_ids=None):
-
+    def forward(self, input_ids, attention_mask, token_type_ids=None, slot_labels_ids=None, labels_ids=None):
         outputs = self.bert(
             input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids
         )  # sequence_output, pooled_output, (hidden_states), (attentions)
-#         outputs = self.bert(
-#             input_ids
-#         )  # sequence_output, pooled_output, (hidden_states), (attentions)
         sequence_output = outputs[0]
         pooled_output = outputs[1]  # [CLS]
 
-
         
         slot_logits = self.slot_classifier(sequence_output)
+        logits = self.classifier(pooled_output)
 
         total_loss = 0
+
+        if labels_ids is not None:
+            loss_fct = nn.BCEWithLogitsLoss()
+            # loss = loss_fct(logits.view(-1, self.num_labels), labels_ids.view(-1))
+            loss = loss_fct(logits, labels_ids)
+            total_loss += loss
 
         # 2. Slot Softmax
         if slot_labels_ids is not None:
@@ -59,7 +67,7 @@ class BioBERT_NER(BertPreTrainedModel):
                     slot_loss = slot_loss_fct(slot_logits.view(-1, self.num_slot_labels), slot_labels_ids.view(-1))
             total_loss += (1 - self.args.intent_loss_coef) * slot_loss
 
-        outputs = ((slot_logits),) + outputs[2:]  # add hidden states and attention if they are here
+        outputs = ((logits, slot_logits),) + outputs[2:]  # add hidden states and attention if they are here
 
         outputs = (total_loss,) + outputs
 
