@@ -7,7 +7,7 @@ WORK_DIR = os.path.abspath(os.getcwd())
 
 def main():
     print("Loading dataset...")
-    with open(os.path.join(WORK_DIR, "data/qa/QA_summary.json"), "r") as file:
+    with open(os.path.join(WORK_DIR, "data/qa/kb/kb_qa_summary.json"), "r") as file:
         data = json.load(file)
 
     data_clean = []
@@ -17,7 +17,7 @@ def main():
             if d not in data_clean:
                 data_clean.append(d)
     print(len(data_clean))
-    with open(os.path.join(WORK_DIR, "data/qa/es_data.json"), "w") as file:
+    with open(os.path.join(WORK_DIR, "data/qa/kb/es_kb_data.json"), "w") as file:
         json.dump(data_clean, file, ensure_ascii=False)
 
 if __name__ == "__main__":
