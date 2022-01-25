@@ -14,7 +14,8 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import streaming_bulk
 
 WORK_DIR = os.path.abspath(os.getcwd())
-DATASET_PATH = join(WORK_DIR, "data/qa/es_data_with_covid.json")
+QA_PATH = join(WORK_DIR, "data/qa/es_data_with_covid.json")
+KB_PATH = join(WORK_DIR, "data/qa/es_kb_data.json")
 
 
 def create_index(client):
@@ -56,8 +57,10 @@ def generate_actions(data):
 
 def main():
     print("Loading dataset...")
-    with open(DATASET_PATH, 'r') as open_file:
+    with open(QA_PATH, 'r') as open_file:
         data = json.load(open_file)
+    with open(KB_PATH, 'r') as open_file:
+        data.extend(json.load(open_file))
     number_of_docs = len(data)
 
     client = Elasticsearch(timeout=30, max_retries=10, retry_on_timeout=True)

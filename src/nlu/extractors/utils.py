@@ -17,7 +17,6 @@ from transformers import (
 
 import matplotlib.pyplot as plt
 import itertools
-import seaborn as sn
 import pandas as pd
 
 MODEL_CLASSES = {
