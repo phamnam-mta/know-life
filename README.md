@@ -18,7 +18,8 @@ pip install -r requirements.txt
 ```
 3. Download checkpoint
 
-- Download NER Checkpoint in [here](https://drive.google.com/drive/folders/111ThBNm1B744V5WnsQDU64ou5oAyK9j_?usp=sharing)
+<!-- - Download NER Checkpoint in [here](https://drive.google.com/drive/folders/111ThBNm1B744V5WnsQDU64ou5oAyK9j_?usp=sharing) -->
+Download NLU Checkpoint in [here](https://drive.google.com/drive/folders/1WzkKClA68Ubbl0404dN1KPeKPPkZnufB?usp=sharing)
 
 - Copy downloaded checkpoint into `./ckpt` folder
 
