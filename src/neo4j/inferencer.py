@@ -17,15 +17,17 @@ from src.utils.constants import (
     INFO_INTENT,
     INTENT_MAPPER
 )
+from src.neo4j.normalize import Normalizer
 from py2neo import Graph,Node
 
 
 class Inferencer:
     def __init__(self,uri=URI,user=USER,password=PASSWORD):
         self.graph = Graph(URI, auth=(USER, PASSWORD))
+        self.normalizer = Normalizer()
 
     def query(self,request):
-        '''
+        ''' Cypher code to get data from graph database
         Args:
             - request {
                 - symptom (list)
@@ -33,23 +35,28 @@ class Inferencer:
                 - intent (str)
             }
         Return:
-            - result (list of str)
+            - result (str)
         '''
         intent = request['intent']
-        symptom = request['symptom']
+        git = request['symptom']
         disease = request['disease']
 
         if intent in VERIFY_INTENT:
-            intent = INTENT_MAPPER[intent]
+            neo4j_intent = INTENT_MAPPER[intent]
             result = self.get_answer_verify(symptom,disease)
             
         if intent in DIAGONIS_INTENT:
-            intent = INTENT_MAPPER[intent]
+            neo4j_intent = INTENT_MAPPER[intent]
             result = self.get_answer_diag(symptom)
-            
+            result = self.reranking_diag(result)
+
         if intent in INFO_INTENT:
-            intent = INTENT_MAPPER[intent]
-            result = self.get_answer_info(disease,intent)
+            neo4j_intent = INTENT_MAPPER[intent]
+            result = self.get_answer_info(disease,neo4j_intent)
+
+        # filter None element in list
+        result = list(filter(None, result))
+        result = self.normalizer(result,intent)
 
         return result
 
@@ -119,6 +126,23 @@ class Inferencer:
             
             for a in ans:
                 result.append(a['result'])
+
+        return result
+
+    def reranking_diag(self,response,topk=10):
+        ''' Reranking/Normalize the output 
+        Args:
+            - response (list of dict) : [{'name': 'Chấn thương sọ não', 'num_symptom': 3, 'disease_rels': 20, 'ratio': 0.15}]
+                - name (str) : disease name
+                - num_symptom (str) : overlap symptom
+                - disease_rels (int) : # symptoms that disease totally has
+                - ratio (float) : num_symptom/disease_rels
+        Return:
+            - result (list of dict)
+        '''
+        # sorted from highest to lowest
+        result = sorted(response, key=lambda d: -d['ratio']) 
+        result = result[:topk]
 
         return result
 
