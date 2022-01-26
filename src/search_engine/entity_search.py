@@ -15,21 +15,23 @@ from src.utils.constants import (
     ENTITY,
     SYNONYM_KEY
 )
-
+from src.neo4j.inferencer import Inferencer
 
 class EntitySearch():
-    def __init__(self, 
+    def __init__(self,
         database_path=KB_DATABASE_PATH, 
         relation_path=KB_RELATION_PATH, 
         model_dir=KB_DEFAULT_MODEL_DIR,
         data_dir=KB_DEFAULT_DATA_DIR):
 
         self.database = read_json(database_path)
-        self.relations = read_txt(relation_path)
+        # self.relations = read_txt(relation_path)
 
         self.ner = BERTEntityExtractor(
             model_dir=model_dir, data_dir=data_dir)
 
+        self.neo4j_inferencer = Inferencer()
+        
     def query(self, question):
         '''
         Args:
@@ -42,14 +44,21 @@ class EntitySearch():
             }
         '''
         entities = self.ner.inference(question)
-        entity_relation = self.to_entity_relation(entities)
+        # bug here
+        # entity_relation = self.to_entity_relation(entities)
 
         result = []
         index = 0
-        for k, v in entity_relation.items():
-            _, prettier_answer, score = self.get_entity_by_relation(k, v) # list
-            highlight_terms = [vl["value"] for vl in v if vl["value"]]
-            highlight_terms.append(k)
+        
+        for intent in entities['intent']:
+            request = {
+                'symptom' : entities['symptom'],
+                'disease' : entities['disease'],
+                'intent' : intent
+            }
+            prettier_answer = self.neo4j_inferencer.query(request)  # list of str
+            highlight_terms = []
+            score = 100
             result.append({
                 "id": index,
                 "score": score,
@@ -61,6 +70,22 @@ class EntitySearch():
                 },
             })
             index += 1
+
+        # for k, v in entity_relation.items():
+        #     _, prettier_answer, score = self.get_entity_by_relation(k, v) # list
+        #     highlight_terms = [vl["value"] for vl in v if vl["value"]]
+        #     highlight_terms.append(k)
+        #     result.append({
+        #         "id": index,
+        #         "score": score,
+        #         "question": question,
+        #         "answer_dislay" : prettier_answer,
+        #         "highlight": {
+        #             "question": [self.get_highlight(question, highlight_terms)],
+        #             "answer_dislay": [self.get_highlight(prettier_answer, highlight_terms)],
+        #         },
+        #     })
+        #     index += 1
 
         return result
 

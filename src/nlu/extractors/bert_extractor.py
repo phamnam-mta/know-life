@@ -142,7 +142,7 @@ class BERTEntityExtractor():
     def prediction(self, slot_preds, tokens, attention_mask, intent_list):
         predictions = {
             'disease': [],
-            'symp': [],
+            'symptom': [],
             'intent': [],
         }
         seq_in = []

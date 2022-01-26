@@ -7,7 +7,7 @@ KB_INDEX='kb'
 MAX_ANSWER_LENGTH = 300
 KB_DEFAULT_MODEL_DIR = "models/bert_extractor"
 KB_DEFAULT_DATA_DIR = "data/kb"
-KB_DATABASE_PATH = "data/kb/data.json"
+KB_DATABASE_PATH = "data/kb/raw_data/vinmec_data.json"
 KB_RELATION_PATH = "data/kb/relations.txt"
 NOT_FOUND_ENTITY = "KB chưa cập nhật quan hệ này"
 TEST_DIR = "data/kb/testcases.csv"
@@ -37,3 +37,25 @@ ENV_SANIC_BACKLOG = "SANIC_BACKLOG"
 DEFAULT_LOG_LEVEL_LIBRARIES = "ERROR"
 ENV_LOG_LEVEL_LIBRARIES = "LOG_LEVEL_LIBRARIES"
 DEFAULT_SERVER_INTERFACE = "0.0.0.0"
+
+# neo4j
+THRESHOLD = 0.55
+URI = 'bolt://localhost:7687'
+USER = 'neo4j'
+PASSWORD = 'password'
+DIAGONIS_INTENT = ['diagnosis']
+VERIFY_INTENT = ['verify']
+INFO_INTENT = ['queryentity','queryattribute.attr_cause','queryattribute.attr_symp','queryattribute.attr_rf',\
+    'queryattribute.attr_treat','queryattribute.attr_prev','queryattribute.attr_sev','advise']
+
+INTENT_MAPPER= {
+    'diagnosis':"diagnosis",
+    'verify':"verify",
+    'queryentity':"overview",
+    'queryattribute.attr_cause':"cause",
+    'queryattribute.attr_symp':"symptom",
+    'queryattribute.attr_treat':"treatment",
+    'queryattribute.attr_prev':"prevention",
+    'queryattribute.attr_sev':"severity",
+    'advise':"advise",
+}

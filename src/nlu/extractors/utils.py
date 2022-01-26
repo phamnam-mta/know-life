@@ -10,12 +10,9 @@ from transformers import (
     BertConfig
 )
 
-<<<<<<< HEAD
 import matplotlib.pyplot as plt
 import itertools
 import pandas as pd
-=======
->>>>>>> e23a576d566717a8a14bb041f4da321cbf3c67e8
 
 MODEL_CLASSES = {
     "xlmr": (XLMRobertaConfig, XLMR, XLMRobertaTokenizer),
