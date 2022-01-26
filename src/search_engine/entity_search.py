@@ -12,7 +12,8 @@ from src.utils.constants import (
     ENTITY,
     SYNONYM_KEY
 )
-from src.neo4j.neo4j_provider import Inferencer
+from src.neo4j.inferencer import Inferencer
+# from src.neo4j.neo4j_provider import Inferencer
 
 class EntitySearch():
     def __init__(self,

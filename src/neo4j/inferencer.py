@@ -6,25 +6,28 @@ intent:
 - verify
 '''
 import itertools
-from typing import Text
 
-from src.neo4j import NEO4J_AUTH, NEO4J_URL
 from src.utils.constants import (
     NEO4J_THRESHOLD,
+    URI,
+    USER,
+    PASSWORD,
     VERIFY_INTENT,
     DIAGNOSIS_INTENT,
     INFO_INTENT,
     INTENT_MAPPER
 )
-from py2neo import Graph, Node
+from src.neo4j.normalize import Normalizer
+from py2neo import Graph,Node
 
 
-class Neo4jProvider():
-    def __init__(self, uri: Text, user: Text, password: Text):
-        self.graph = Graph(uri, auth=(user, password))
+class Inferencer:
+    def __init__(self,uri=URI,user=USER,password=PASSWORD):
+        self.graph = Graph(URI, auth=(USER, PASSWORD))
+        self.normalizer = Normalizer()
 
-    def query(self, request):
-        '''
+    def query(self,request):
+        ''' Cypher code to get data from graph database
         Args:
             - request {
                 - symptom (list)
@@ -42,7 +45,7 @@ class Neo4jProvider():
             neo4j_intent = INTENT_MAPPER[intent]
             result = self.get_answer_verify(symptom,disease)
             
-        if intent in DIAGONIS_INTENT:
+        if intent in DIAGNOSIS_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
             result = self.get_answer_diag(symptom)
             result = self.reranking_diag(result)
@@ -53,11 +56,11 @@ class Neo4jProvider():
 
         # filter None element in list
         result = list(filter(None, result))
-        result = self.normalizer(result,intent)
+        result = self.normalizer(result,symptom,disease,intent)
 
         return result
 
-    def get_answer_verify(self, symptom, disease):
+    def get_answer_verify(self,symptom,disease):
         result = []
         for s_ in symptom:
             for d_ in disease:
@@ -69,14 +72,14 @@ class Neo4jProvider():
                 RETURN d.name as disease, s.name as symptom, EXISTS( (d)-[:HAS_SYMPTOM]->(s) ) as relation
                 """
 
-            ans = self.graph.run(query)
-
-            ans = ans.data()  # list of dict
-            result.append(ans)
+                ans = self.graph.run(query)
+            
+                ans = ans.data() # list of dict
+                result.append(ans)
 
         return result
 
-    def get_num_rels(self, disease):
+    def get_num_rels(self,disease):
         ''' Get disease - number of relations 
         '''
         query = f'''
@@ -89,7 +92,7 @@ class Neo4jProvider():
 
         return result.data()[0]['rels']
 
-    def get_answer_diag(self, symptom):
+    def get_answer_diag(self,symptom):
         '''
         '''
         # uppercase 1st letter
@@ -106,10 +109,10 @@ class Neo4jProvider():
         for res in result:
             res['disease_rels'] = self.get_num_rels(res['name'])
             res['ratio'] = res['num_symptom'] / res['disease_rels']
-
+        
         return result
 
-    def get_answer_info(self, entity, intent):
+    def get_answer_info(self,entity,intent):
         result = []
         for ent in entity:
             query = f"""
@@ -119,7 +122,7 @@ class Neo4jProvider():
             """
 
             ans = self.graph.run(query).data()
-
+            
             for a in ans:
                 result.append(a['result'])
 
@@ -143,16 +146,14 @@ class Neo4jProvider():
         return result
 
 if __name__ == '__main__':
-    user = NEO4J_AUTH.split("/")[0]
-    password = NEO4J_AUTH.split("/")[1]
-    p = Neo4jProvider(NEO4J_URL, user, password)
+    inferencer = Inferencer()
 
     request = {
-        'symptom': ['phân có máu', 'sốt', 'chóng mặt', 'buồn nôn', 'đau ngực'],
+        'symptom': ['phân có máu','sốt','chóng mặt','buồn nôn','đau ngực'],
         'disease': ['trĩ ngoại'],
-        'intent': 'verify'
+        'intent' : 'verify'
     }
-    answer = p.query(request)
+    answer = inferencer.query(request)
     print(answer)
     '''
     [{'name': 'Than', 'num_symptom': 3, 'disease_rels': 13, 'ratio': 0.23076923076923078}, 

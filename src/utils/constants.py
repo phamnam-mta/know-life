@@ -54,3 +54,6 @@ INTENT_MAPPER= {
     'queryattribute.attr_sev':"severity",
     'advise':"advise",
 }
+URI = 'bolt://localhost:7687'
+USER = 'neo4j'
+PASSWORD = 'password'
