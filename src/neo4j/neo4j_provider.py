@@ -109,7 +109,7 @@ class Neo4jProvider():
         for ent in entity:
             query = f"""
             MATCH (a:Disease)
-            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent}") >=  {THRESHOLD}
+            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent}") >=  {NEO4J_THRESHOLD}
             RETURN a.{intent} as result
             """
 
