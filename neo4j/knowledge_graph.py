@@ -93,7 +93,7 @@ class KnowledgeGraph:
                 query=query, exception=exception))
             raise    
     
-    def build_database(self, data):
+    def build_database(self,data):
         for sample in data:
             with self.driver.session() as session:
                 # Write transactions allow the driver to handle retries and transient errors
@@ -135,4 +135,3 @@ class KnowledgeGraph:
                     
                     result.append(result)
         return result
-

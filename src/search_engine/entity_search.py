@@ -109,3 +109,4 @@ class EntitySearch():
         result, kb_answer = self.reranking(kb_answer,results,entity)
         
         return result, kb_answer
+

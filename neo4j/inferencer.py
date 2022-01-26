@@ -13,7 +13,11 @@ THRESHOLD = 0.55
 
 class Inferencer:
     def __init__(self):
+<<<<<<< HEAD
         self.graph = Graph("bolt://localhost:7687", auth=("neo4j", "knowlife"))
+=======
+        self.graph = Graph("bolt://localhost:7687", auth=("neo4j", "password"))
+>>>>>>> d9d9aea93645617d261aea715e35b97d4e3cde64
 
     def query(self,request):
         '''
@@ -33,7 +37,11 @@ class Inferencer:
         if intent in VERIFY_INTENT:
             result = self.get_answer_verify(symptom,disease)
             
+<<<<<<< HEAD
         if intent in DIAGNOSIS_INTENT:
+=======
+        if intent in DIAGONIS_INTENT:
+>>>>>>> d9d9aea93645617d261aea715e35b97d4e3cde64
             result = self.get_answer_diag(symptom)
             
         if intent in INFO_INTENT:
