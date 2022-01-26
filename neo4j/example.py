@@ -1,5 +1,6 @@
 import logging
 import json
+import os
 
 from neo4j import GraphDatabase
 from neo4j.exceptions import ServiceUnavailable
@@ -13,20 +14,12 @@ def read_json(path):
     return data
 
 if __name__ == "__main__":
-    # See https://neo4j.com/developer/aura-connect-driver/ for Aura specific connection URL.
-    scheme = "bolt"  # Connecting to Aura, use the "neo4j+s" URI scheme
-    host_name = "localhost"
-    port = 7687
-    url = "{scheme}://{host_name}:{port}".format(scheme=scheme, host_name=host_name, port=port)
-    user = "neo4j"
-    password = "password"
+    NEO4J_URL = os.getenv("NEO4J_URL", None)
+    NEO4J_AUTH = os.getenv("NEO4J_AUTH", None)
+    user = NEO4J_AUTH.split("/")[0]
+    password = NEO4J_AUTH.split("/")[1]
     
-    app = KnowledgeGraph(url, user, password)
-
-    DATA = read_json('../data/data.json')
-
-    # create disease
-    # app.build_database(DATA)
+    app = KnowledgeGraph(NEO4J_URL, user, password)
 
     response = app.query('ung gan',['cause','symptom'])
     

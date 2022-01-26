@@ -131,7 +131,7 @@ dmypy.json
 # elasticsearch
 /esdata
 /data
-
+neo4j/db
 # env
 .env
 

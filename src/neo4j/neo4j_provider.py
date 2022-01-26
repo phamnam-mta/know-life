@@ -6,28 +6,25 @@ intent:
 - verify
 '''
 import itertools
+from typing import Text
 
+from src.neo4j import NEO4J_AUTH, NEO4J_URL
 from src.utils.constants import (
-    THRESHOLD,
-    URI,
-    USER,
-    PASSWORD,
+    NEO4J_THRESHOLD,
     VERIFY_INTENT,
-    DIAGONIS_INTENT,
+    DIAGNOSIS_INTENT,
     INFO_INTENT,
     INTENT_MAPPER
 )
-from src.neo4j.normalize import Normalizer
-from py2neo import Graph,Node
+from py2neo import Graph, Node
 
 
-class Inferencer:
-    def __init__(self,uri=URI,user=USER,password=PASSWORD):
-        self.graph = Graph(URI, auth=(USER, PASSWORD))
-        self.normalizer = Normalizer()
+class Neo4jProvider():
+    def __init__(self, uri: Text, user: Text, password: Text):
+        self.graph = Graph(uri, auth=(user, password))
 
-    def query(self,request):
-        ''' Cypher code to get data from graph database
+    def query(self, request):
+        '''
         Args:
             - request {
                 - symptom (list)
@@ -60,27 +57,26 @@ class Inferencer:
 
         return result
 
-    def get_answer_verify(self,symptom,disease):
+    def get_answer_verify(self, symptom, disease):
         result = []
-        THRESHOLD = 0.55
         for s_ in symptom:
             for d_ in disease:
                 query = f"""
                 MATCH (d:Disease)
-                WHERE apoc.text.sorensenDiceSimilarity(d.name, "{d_}") >=  {THRESHOLD}
+                WHERE apoc.text.sorensenDiceSimilarity(d.name, "{d_}") >=  {NEO4J_THRESHOLD}
                 MATCH (s:Symptom) 
-                WHERE apoc.text.sorensenDiceSimilarity(s.name, "{s_}") >=  {THRESHOLD}
+                WHERE apoc.text.sorensenDiceSimilarity(s.name, "{s_}") >=  {NEO4J_THRESHOLD}
                 RETURN d.name as disease, s.name as symptom, EXISTS( (d)-[:HAS_SYMPTOM]->(s) ) as relation
                 """
 
             ans = self.graph.run(query)
-          
-            ans = ans.data() # list of dict
+
+            ans = ans.data()  # list of dict
             result.append(ans)
 
         return result
 
-    def get_num_rels(self,disease):
+    def get_num_rels(self, disease):
         ''' Get disease - number of relations 
         '''
         query = f'''
@@ -93,7 +89,7 @@ class Inferencer:
 
         return result.data()[0]['rels']
 
-    def get_answer_diag(self,symptom):
+    def get_answer_diag(self, symptom):
         '''
         '''
         # uppercase 1st letter
@@ -110,20 +106,20 @@ class Inferencer:
         for res in result:
             res['disease_rels'] = self.get_num_rels(res['name'])
             res['ratio'] = res['num_symptom'] / res['disease_rels']
-        
+
         return result
 
-    def get_answer_info(self,entity,intent):
+    def get_answer_info(self, entity, intent):
         result = []
         for ent in entity:
             query = f"""
             MATCH (a:Disease)
-            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent}") >=  {THRESHOLD}
+            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent}") >=  {NEO4J_THRESHOLD}
             RETURN a.{intent} as result
             """
 
             ans = self.graph.run(query).data()
-            
+
             for a in ans:
                 result.append(a['result'])
 
@@ -147,14 +143,16 @@ class Inferencer:
         return result
 
 if __name__ == '__main__':
-    inferencer = Inferencer()
+    user = NEO4J_AUTH.split("/")[0]
+    password = NEO4J_AUTH.split("/")[1]
+    p = Neo4jProvider(NEO4J_URL, user, password)
 
     request = {
-        'symptom': ['phân có máu','sốt','chóng mặt','buồn nôn','đau ngực'],
+        'symptom': ['phân có máu', 'sốt', 'chóng mặt', 'buồn nôn', 'đau ngực'],
         'disease': ['trĩ ngoại'],
-        'intent' : 'verify'
+        'intent': 'verify'
     }
-    answer = inferencer.query(request)
+    answer = p.query(request)
     print(answer)
     '''
     [{'name': 'Than', 'num_symptom': 3, 'disease_rels': 13, 'ratio': 0.23076923076923078}, 

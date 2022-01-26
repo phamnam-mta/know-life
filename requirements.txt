@@ -10,6 +10,7 @@ sanic==21.9.3
 Sanic-Cors==1.0.1
 sanic-jwt==1.7.0
 neo4j
+py2neo
 sentencepiece
 tqdm
 numpy

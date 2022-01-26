@@ -4,6 +4,11 @@ import json
 from neo4j import GraphDatabase
 from neo4j.exceptions import ServiceUnavailable
 
+def read_json(path):
+    with open(path) as f:
+        data = json.load(f)
+    return data
+
 class KnowledgeGraph:
 
     def __init__(self, uri, user, password):
@@ -135,3 +140,20 @@ class KnowledgeGraph:
                     
                     result.append(result)
         return result
+
+if __name__ == "__main__":
+    # See https://neo4j.com/developer/aura-connect-driver/ for Aura specific connection URL.
+    scheme = "bolt"  # Connecting to Aura, use the "neo4j+s" URI scheme
+    host_name = "localhost"
+    port = 7687
+    url = "{scheme}://{host_name}:{port}".format(scheme=scheme, host_name=host_name, port=port)
+    print(url)
+    user = "neo4j"
+    password = "password"
+    app = KnowledgeGraph(url, user, password)
+    DATA = read_json('../data/kb/data.json')
+
+    # create disease
+    app.build_database(DATA)
+
+    app.close()
