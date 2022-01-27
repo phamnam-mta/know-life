@@ -15,8 +15,6 @@ from src.utils import sanic_utils
 from src.utils.constants import (
     KB_DEFAULT_MODEL_DIR,
     KB_DEFAULT_DATA_DIR,
-    KB_DATABASE_PATH,
-    KB_RELATION_PATH,
     DEFAULT_RESPONSE_TIMEOUT,
     DEFAULT_SERVER_PORT,
     DEFAULT_SERVER_INTERFACE,
@@ -63,8 +61,6 @@ def configure_app(
 
 
 def serve_application(
-    database_path: Text = KB_DATABASE_PATH,
-    relation_path: Text = KB_RELATION_PATH,
     kb_model_dir: Text = KB_DEFAULT_MODEL_DIR,
     kb_data_dir: Text = KB_DEFAULT_DATA_DIR,
     qa_model_dir: Text = QA_MODEL_DIR,
@@ -106,8 +102,6 @@ def serve_application(
 
     app.register_listener(
         partial(load_agent_on_start,
-                database_path,
-                relation_path,
                 kb_model_dir,
                 kb_data_dir,
                 qa_model_dir,
@@ -134,8 +128,6 @@ def serve_application(
 
 
 def load_agent_on_start(
-    database_path: Text, 
-    relation_path: Text, 
     kb_model_dir: Text,
     kb_data_dir: Text,
     qa_model_dir: Text, 
@@ -148,8 +140,6 @@ def load_agent_on_start(
     Used to be scheduled on server start
     (hence the `app` and `loop` arguments)."""
     app.agent = Agent.load_agent(
-                database_path=database_path, 
-                relation_path=relation_path, 
                 kb_model_dir=kb_model_dir,
                 kb_data_dir=kb_data_dir,
                 qa_model_dir=qa_model_dir, 
@@ -162,8 +152,6 @@ def load_agent_on_start(
             "Load default agent without any model."
         )
         app.agent = Agent.load_agent(
-            database_path = KB_DATABASE_PATH,
-            relation_path = KB_RELATION_PATH,
             kb_model_dir = KB_DEFAULT_MODEL_DIR,
             kb_data_dir = KB_DEFAULT_DATA_DIR,
             qa_model_dir = QA_MODEL_DIR,

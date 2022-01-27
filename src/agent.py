@@ -26,9 +26,7 @@ def agent_must_be_ready(f: Callable[..., Any]) -> Callable[..., Any]:
     return decorated
 
 class Agent():
-    def __init__(self,  
-            database_path: Text, 
-            relation_path: Text, 
+    def __init__(self,
             kb_model_dir: Text,
             kb_data_dir: Text,
             qa_model_dir: Text, 
@@ -36,17 +34,13 @@ class Agent():
             index: Text
     ) -> None:
         self.entity_search = EntitySearch(
-            database_path=database_path, 
-            relation_path=relation_path, 
             model_dir=kb_model_dir,
             data_dir=kb_data_dir,)
         self.semantic_search = SemanticSearch(qa_model_dir, es_url, index)
         self.elastic_search = ESKnowLife(es_url, index)
 
     @classmethod
-    def load_agent(cls, 
-            database_path: Text, 
-            relation_path: Text, 
+    def load_agent(cls,
             kb_model_dir: Text,
             kb_data_dir: Text,
             qa_model_dir: Text, 
@@ -54,8 +48,6 @@ class Agent():
             index: Text
         ):
         agent = Agent(
-            database_path=database_path, 
-            relation_path=relation_path, 
             kb_model_dir=kb_model_dir,
             kb_data_dir=kb_data_dir,
             qa_model_dir=qa_model_dir, 

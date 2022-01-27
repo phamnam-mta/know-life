@@ -52,7 +52,7 @@ class Normalizer:
         for obj in neo4joutput:
             potential_disease.append(f"- {obj['name']} , tỉ lệ mắc : {obj['ratio']}")
         result = f'''Dựa theo các triệu chứng: {','.join(symptom)},
-                Bạn có thể mắc các bệnh sau đây : {"<br>".join(potential_disease)}
+                Bạn có thể mắc các bệnh sau đây : {"<br>" + "<br>".join(potential_disease)}
                 '''
         return result
     
