@@ -8,7 +8,7 @@ intent:
 import itertools
 from typing import Text
 
-from src.neo4j import NEO4J_AUTH, NEO4J_URL
+from src.data_provider import NEO4J_AUTH, NEO4J_URL
 from src.utils.constants import (
     NEO4J_THRESHOLD,
     VERIFY_INTENT,
@@ -16,15 +16,24 @@ from src.utils.constants import (
     INFO_INTENT,
     INTENT_MAPPER
 )
+from src.data_provider.normalize import Normalizer
 from py2neo import Graph, Node
 
 
 class Neo4jProvider():
-    def __init__(self, uri: Text, user: Text, password: Text):
+    def __init__(self, uri: Text = None, user: Text = None, password: Text = None):
+        if not uri:
+            # uri = NEO4J_URL
+            # user = NEO4J_AUTH.split("/")[0]
+            # password = NEO4J_AUTH.split("/")[1]
+            uri = 'bolt://localhost:7687'
+            user = 'neo4j'
+            password = 'password'
         self.graph = Graph(uri, auth=(user, password))
+        self.normalizer = Normalizer()
 
     def query(self, request):
-        '''
+        ''' Cypher code to get data from graph database
         Args:
             - request {
                 - symptom (list)
@@ -37,23 +46,26 @@ class Neo4jProvider():
         intent = request['intent']
         symptom = request['symptom']
         disease = request['disease']
+        disease = self.normalizer.normalize_disease(disease)
+        
+        result = []
 
         if intent in VERIFY_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
-            result = self.get_answer_verify(symptom,disease)
-            
-        if intent in DIAGONIS_INTENT:
-            neo4j_intent = INTENT_MAPPER[intent]
+            result = self.get_answer_verify(symptom, disease)
+
+        if intent in DIAGNOSIS_INTENT:
+            # neo4j_intent = INTENT_MAPPER[intent]
             result = self.get_answer_diag(symptom)
             result = self.reranking_diag(result)
 
         if intent in INFO_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
-            result = self.get_answer_info(disease,neo4j_intent)
+            result = self.get_answer_info(disease, neo4j_intent)
 
         # filter None element in list
         result = list(filter(None, result))
-        result = self.normalizer(result,intent)
+        result = self.normalizer(result, symptom, disease, intent)
 
         return result
 
@@ -85,9 +97,8 @@ class Neo4jProvider():
         WHERE rels > 1 and d.name in ["{disease}"]
         RETURN d.name as disease, rels 
         '''
-        result = self.graph.run(query)
-
-        return result.data()[0]['rels']
+        result = self.graph.run(query).data()
+        return result
 
     def get_answer_diag(self, symptom):
         '''
@@ -104,8 +115,12 @@ class Neo4jProvider():
         ans = self.graph.run(query)
         result = ans.data()
         for res in result:
-            res['disease_rels'] = self.get_num_rels(res['name'])
-            res['ratio'] = res['num_symptom'] / res['disease_rels']
+            disease_rels = self.get_num_rels(res['name'])
+            if disease_rels:
+                res['disease_rels'] = disease_rels[0].get("rels")
+                res['ratio'] = res['num_symptom'] / res['disease_rels']
+            else:
+                res['ratio'] = 0.001
 
         return result
 
@@ -114,7 +129,7 @@ class Neo4jProvider():
         for ent in entity:
             query = f"""
             MATCH (a:Disease)
-            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent}") >=  {NEO4J_THRESHOLD}
+            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent.replace('bệnh', '')}") >=  {NEO4J_THRESHOLD}
             RETURN a.{intent} as result
             """
 
@@ -125,7 +140,7 @@ class Neo4jProvider():
 
         return result
 
-    def reranking_diag(self,response,topk=10):
+    def reranking_diag(self, response, topk=10):
         ''' Reranking/Normalize the output 
         Args:
             - response (list of dict) : [{'name': 'Chấn thương sọ não', 'num_symptom': 3, 'disease_rels': 20, 'ratio': 0.15}]
@@ -137,10 +152,11 @@ class Neo4jProvider():
             - result (list of dict)
         '''
         # sorted from highest to lowest
-        result = sorted(response, key=lambda d: -d['ratio']) 
+        result = sorted(response, key=lambda d: -d['ratio'])
         result = result[:topk]
 
         return result
+
 
 if __name__ == '__main__':
     user = NEO4J_AUTH.split("/")[0]
@@ -150,7 +166,7 @@ if __name__ == '__main__':
     request = {
         'symptom': ['phân có máu', 'sốt', 'chóng mặt', 'buồn nôn', 'đau ngực'],
         'disease': ['trĩ ngoại'],
-        'intent': 'verify'
+        'intent': 'diagnosis'
     }
     answer = p.query(request)
     print(answer)

@@ -3,17 +3,14 @@ from typing import List, Text
 import warnings
 
 from src.utils.io import *
-from src.utils.kb_utils import *
 from src.nlu import BERTEntityExtractor
-from src.utils.kb_utils import is_relevant_string, get_fuzzy_score
+from src.utils.fuzzy import is_relevant_string, get_fuzzy_score
 from src.utils.constants import (
     KB_DEFAULT_MODEL_DIR,
     KB_DEFAULT_DATA_DIR,
-    ENTITY,
     SYNONYM_KEY
 )
-from src.neo4j.inferencer import Inferencer
-# from src.neo4j.neo4j_provider import Inferencer
+from src.data_provider.neo4j_provider import Neo4jProvider
 
 class EntitySearch():
     def __init__(self,
@@ -23,7 +20,7 @@ class EntitySearch():
         self.ner = BERTEntityExtractor(
             model_dir=model_dir, data_dir=data_dir)
 
-        self.neo4j_inferencer = Inferencer()
+        self.provider = Neo4jProvider()
         
     def query(self, question):
         '''
@@ -40,14 +37,14 @@ class EntitySearch():
 
         result = []
         index = 0
-        print(entities)
+
         for intent in entities['intent']:
             request = {
                 'symptom' : entities['symptom'],
                 'disease' : entities['disease'],
                 'intent' : intent
             }
-            prettier_answer = self.neo4j_inferencer.query(request)  # list of str
+            prettier_answer = self.provider.query(request)  # list of str
             highlight_terms = []
             score = 100
             result.append({

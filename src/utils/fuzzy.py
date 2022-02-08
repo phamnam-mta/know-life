@@ -42,8 +42,10 @@ def is_relevant_string( str1,
             if return_score:
                 return True, 100
             return True
-    
-    return False, 0
+    if return_score:
+        return False, 0
+    else:
+        return False
 
 def get_fuzzy_score(str1,str2):
     score = fuzz.ratio(str1.lower(),str2.lower())

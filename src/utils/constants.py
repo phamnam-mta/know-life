@@ -1,7 +1,8 @@
 # elasticsearch
-QA_INDEX='qa'
-QA_QUERY_FIELDS = [ "question", "answer", "answer_display" ]
-KB_INDEX='kb'
+from enum import Enum
+QA_INDEX = 'qa'
+QA_QUERY_FIELDS = ["question", "answer", "answer_display"]
+KB_INDEX = 'kb'
 
 # entity search
 MAX_ANSWER_LENGTH = 300
@@ -13,21 +14,26 @@ ENTITY = "disease"
 SYNONYM_KEY = "synonym"
 
 # semantic search
-from enum import Enum
+
+
 class ResponseAttribute(Enum):
     ALL = 1
     ANSWER = 2
+
+
 class SearchMethod(Enum):
     ES = "elastic"
     SM = "semantic"
     EE = "entity"
+
+
 QA_MODEL_DIR = "models/ranking"
 
 # server
 DEFAULT_REQUEST_TIMEOUT = 60 * 5  # 5 minutes
 DEFAULT_RESPONSE_TIMEOUT = 60 * 60  # 1 hour
 DEFAULT_SERVER_PORT = 5000
-DEFAULT_ENCODING= "utf-8"
+DEFAULT_ENCODING = "utf-8"
 TCP_PROTOCOL = "TCP"
 DEFAULT_SANIC_WORKERS = 1
 ENV_SANIC_WORKERS = "SANIC_WORKERS"
@@ -61,3 +67,12 @@ PASSWORD = 'password'
 
 # NORMALIZE DISEASE
 DISEASE_STOPW0RDS = ['bệnh','disease']
+# medical test
+MEDICAL_TEST_PATH = "data/kb/medical_test.json"
+QUANTITATIVE_PATH = "data/kb/quantitative.json"
+POSITIVE_TEXT = "dương tính"
+
+
+class TestResult(Enum):
+    positive = "positive"
+    negative = "negative"
