@@ -5,8 +5,10 @@ from typing import (
     Optional,
     Text,
     Union,
+    List
 )
 from src.search_engine import EntitySearch, SemanticSearch, ESKnowLife
+from src.medical_test_service.medical_test import MedicalTest
 from src.utils.constants import (
     ResponseAttribute
 )
@@ -38,6 +40,7 @@ class Agent():
             data_dir=kb_data_dir,)
         self.semantic_search = SemanticSearch(qa_model_dir, es_url, index)
         self.elastic_search = ESKnowLife(es_url, index)
+        self.medical_test = MedicalTest()
 
     @classmethod
     def load_agent(cls,
@@ -57,7 +60,7 @@ class Agent():
 
     def is_ready(self) -> bool:
         """Check if all necessary components are instantiated to use agent."""
-        return self.entity_search is not None and self.semantic_search is not None and self.elastic_search is not None
+        return self.entity_search is not None and self.semantic_search is not None and self.elastic_search is not None and self.medical_test is not None
 
     @agent_must_be_ready
     def search_by_entity(self, text: Text):
@@ -73,4 +76,11 @@ class Agent():
     async def search_by_elastic(self, text: Text, page_size=0, page_index=20):
         es_ranking = await self.elastic_search.search(text, page_size=page_size, page_index=page_index)
         return es_ranking
+
+    @agent_must_be_ready
+    async def medical_test_suggestion(self, indicators: List):
+        suggestions = self.medical_test.get_suggestions(indicators)
+        for s in suggestions:
+            s["relevant_questions"] = await self.elastic_search.search(s["name"], page_index=0, page_size=3)
+        return suggestions
     

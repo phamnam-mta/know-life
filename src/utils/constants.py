@@ -1,7 +1,8 @@
 # elasticsearch
-QA_INDEX='qa'
-QA_QUERY_FIELDS = [ "question", "answer", "answer_display" ]
-KB_INDEX='kb'
+from enum import Enum
+QA_INDEX = 'qa'
+QA_QUERY_FIELDS = ["question", "answer", "answer_display"]
+KB_INDEX = 'kb'
 
 # entity search
 MAX_ANSWER_LENGTH = 300
@@ -13,21 +14,26 @@ ENTITY = "disease"
 SYNONYM_KEY = "synonym"
 
 # semantic search
-from enum import Enum
+
+
 class ResponseAttribute(Enum):
     ALL = 1
     ANSWER = 2
+
+
 class SearchMethod(Enum):
     ES = "elastic"
     SM = "semantic"
     EE = "entity"
+
+
 QA_MODEL_DIR = "models/ranking"
 
 # server
 DEFAULT_REQUEST_TIMEOUT = 60 * 5  # 5 minutes
 DEFAULT_RESPONSE_TIMEOUT = 60 * 60  # 1 hour
 DEFAULT_SERVER_PORT = 5000
-DEFAULT_ENCODING= "utf-8"
+DEFAULT_ENCODING = "utf-8"
 TCP_PROTOCOL = "TCP"
 DEFAULT_SANIC_WORKERS = 1
 ENV_SANIC_WORKERS = "SANIC_WORKERS"
@@ -40,20 +46,31 @@ DEFAULT_SERVER_INTERFACE = "0.0.0.0"
 NEO4J_THRESHOLD = 0.8
 DIAGNOSIS_INTENT = ['diagnosis']
 VERIFY_INTENT = ['verify']
-INFO_INTENT = ['queryentity','queryattribute.attr_cause','queryattribute.attr_symp','queryattribute.attr_rf',\
-    'queryattribute.attr_treat','queryattribute.attr_prev','queryattribute.attr_sev','advise']
+INFO_INTENT = ['queryentity', 'queryattribute.attr_cause', 'queryattribute.attr_symp', 'queryattribute.attr_rf',
+               'queryattribute.attr_treat', 'queryattribute.attr_prev', 'queryattribute.attr_sev', 'queryattribute.attr_diag', 'advise']
 
-INTENT_MAPPER= {
-    'diagnosis':"diagnosis",
-    'verify':"verify",
-    'queryentity':"overview",
-    'queryattribute.attr_cause':"cause",
-    'queryattribute.attr_symp':"symptom",
-    'queryattribute.attr_treat':"treatment",
-    'queryattribute.attr_prev':"prevention",
-    'queryattribute.attr_sev':"severity",
-    'advise':"advise",
+INTENT_MAPPER = {
+    'verify': "verify",
+    'queryentity': "overview",
+    'queryattribute.attr_cause': "cause",
+    'queryattribute.attr_symp': "symptom",
+    'queryattribute.attr_treat': "treatment",
+    'queryattribute.attr_prev': "prevention",
+    'queryattribute.attr_sev': "severity",
+    'advise': "advise",
+    'queryattribute.attr_rf': 'risk_factor',
+    'queryattribute.attr_diag': 'diagnosis'
 }
 URI = 'bolt://localhost:7687'
 USER = 'neo4j'
 PASSWORD = 'password'
+
+# medical test
+MEDICAL_TEST_PATH = "data/kb/medical_test.json"
+QUANTITATIVE_PATH = "data/kb/quantitative.json"
+POSITIVE_TEXT = "dương tính"
+
+
+class TestResult(Enum):
+    positive = "positive"
+    negative = "negative"

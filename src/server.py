@@ -218,9 +218,9 @@ def create_app(
                 f"An unexpected error occurred during searching. Error: {e}",
             )
 
-    @app.post('/entity_search')
+    @app.post('/medical_test_suggestion')
     @ensure_loaded_agent(app)
-    def entity_search(request: Request):
+    async def medical_test_suggestion(request: Request):
         validate_request_body(
                 request,
                 "No question defined in request body. Add a question to the request body in "
@@ -228,18 +228,17 @@ def create_app(
             )
 
         input_data = request.json
-        question = input_data.get("question")
-        #max_answer_length = input_data.get("max_answer_length", MAX_ANSWER_LENGTH)
+        indicators = input_data.get("indicators")
 
-        if not question:
+        if not indicators:
             raise ErrorResponse(
                 HTTPStatus.BAD_REQUEST,
                 "BadRequest",
-                f"The request is missing the required parameter `question`."
+                f"The request is missing the required parameter `indicators`."
             )
 
         try:
-            response_data = app.agent.search_by_entity(question)
+            response_data = await app.agent.medical_test_suggestion(indicators)
             return response.json(response_data)
         except Exception as e:
             logger.debug(traceback.format_exc())

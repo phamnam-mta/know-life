@@ -8,7 +8,7 @@ intent:
 import itertools
 from typing import Text
 
-from src.neo4j import NEO4J_AUTH, NEO4J_URL
+from src.data_provider import NEO4J_AUTH, NEO4J_URL
 from src.utils.constants import (
     NEO4J_THRESHOLD,
     VERIFY_INTENT,
@@ -16,7 +16,7 @@ from src.utils.constants import (
     INFO_INTENT,
     INTENT_MAPPER
 )
-from src.neo4j.normalize import Normalizer
+from src.data_provider.normalize import Normalizer
 from py2neo import Graph, Node
 
 
@@ -43,6 +43,7 @@ class Neo4jProvider():
         intent = request['intent']
         symptom = request['symptom']
         disease = request['disease']
+        result = []
 
         if intent in VERIFY_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
@@ -123,7 +124,7 @@ class Neo4jProvider():
         for ent in entity:
             query = f"""
             MATCH (a:Disease)
-            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent}") >=  {NEO4J_THRESHOLD}
+            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent.replace('bệnh', '')}") >=  {NEO4J_THRESHOLD}
             RETURN a.{intent} as result
             """
 

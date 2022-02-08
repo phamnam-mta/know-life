@@ -3,16 +3,14 @@ from typing import List, Text
 import warnings
 
 from src.utils.io import *
-from src.utils.kb_utils import *
 from src.nlu import BERTEntityExtractor
-from src.utils.kb_utils import is_relevant_string, get_fuzzy_score
+from src.utils.fuzzy import is_relevant_string, get_fuzzy_score
 from src.utils.constants import (
     KB_DEFAULT_MODEL_DIR,
     KB_DEFAULT_DATA_DIR,
     SYNONYM_KEY
 )
-from src.neo4j.neo4j_provider import Neo4jProvider
-# from src.neo4j.neo4j_provider import Inferencer
+from src.data_provider.neo4j_provider import Neo4jProvider
 
 class EntitySearch():
     def __init__(self,
