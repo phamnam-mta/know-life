@@ -41,7 +41,6 @@ class Inferencer:
         symptom = request['symptom']
         disease = request['disease']
         disease = self.normalizer.normalize_disease(disease)
-        print(disease)
 
         if intent in VERIFY_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
