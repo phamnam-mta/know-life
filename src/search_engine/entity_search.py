@@ -44,9 +44,8 @@ class EntitySearch():
                 'disease' : entities['disease'],
                 'intent' : intent
             }
-            prettier_answer = self.provider.query(request)  # list of str
+            prettier_answer, score = self.provider.query(request)  # list of str
             highlight_terms = []
-            score = 100
             result.append({
                 "id": index,
                 "score": score,

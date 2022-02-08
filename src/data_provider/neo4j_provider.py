@@ -39,13 +39,15 @@ class Neo4jProvider():
             }
         Return:
             - result (str)
+            - score (list of float) : confidence of matching/query (from 0 to 1.0)
         '''
         intent = request['intent']
         symptom = request['symptom']
         disease = request['disease']
         disease = self.normalizer.normalize_disease(disease)
-        
-        result = []
+
+        result = ''
+        score = 100
 
         if intent in VERIFY_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
@@ -58,13 +60,13 @@ class Neo4jProvider():
 
         if intent in INFO_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
-            result = self.get_answer_info(disease, neo4j_intent)
+            result, score = self.get_answer_info(disease, neo4j_intent)
 
         # filter None element in list
         result = list(filter(None, result))
         result = self.normalizer(result, symptom, disease, intent)
 
-        return result
+        return result, score
 
     def get_answer_verify(self, symptom, disease):
         result = []
@@ -123,19 +125,22 @@ class Neo4jProvider():
 
     def get_answer_info(self, entity, intent):
         result = []
+        scores = []
+
         for ent in entity:
             query = f"""
             MATCH (a:Disease)
-            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent.replace('bệnh', '')}") >=  {NEO4J_THRESHOLD}
-            RETURN a.{intent} as result
+            WHERE apoc.text.sorensenDiceSimilarity(a.name, "{ent}") >=  {NEO4J_THRESHOLD}
+            RETURN a.name as name , a.{intent} as result, apoc.text.sorensenDiceSimilarity(a.name, "{ent}") as score
             """
 
             ans = self.graph.run(query).data()
 
             for a in ans:
                 result.append(a['result'])
+                scores.append(a['score'])
 
-        return result
+        return result, scores
 
     def reranking_diag(self, response, topk=10):
         ''' Reranking/Normalize the output 

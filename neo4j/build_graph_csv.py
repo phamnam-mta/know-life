@@ -54,6 +54,7 @@ class KnowledgeGraph():
                 "treatment":row['treatment'],
                 "diagnosis":row['diagnosis'],
                 "prevention":row['prevention'],
+                "severity":row['severity'],
                 "synonym":row['synonym']
             })
         
@@ -166,6 +167,7 @@ if __name__ == "__main__":
     NEO4J_AUTH = os.getenv("NEO4J_AUTH", None)
     user = NEO4J_AUTH.split("/")[0]
     password = NEO4J_AUTH.split("/")[1]
+    
     kg = KnowledgeGraph(NEO4J_URL, user, password)
 
     kg.create_node()
