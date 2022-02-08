@@ -20,8 +20,11 @@ class MedicalTest():
 
     def get_suggestions(self, indicators: List):
         suggestions = []
+        count = 0
         for i in indicators:
+            count += 1
             sg = {
+                "id": count,
                 "input": i,
             }
             references = []
@@ -45,7 +48,7 @@ class MedicalTest():
                                     sg["cause"] = q["cause"]
                                     sg["recommend"] = q["recommend"]
                                     references.extend(m["references"])
-                                break
+                                    break
                     break
             sg["references"] = list(dict.fromkeys(references))
             suggestions.append(sg)

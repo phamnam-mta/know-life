@@ -40,7 +40,7 @@ class EntitySearch():
 
         for intent in entities['intent']:
             request = {
-                'symptom' : entities['symptom'],
+                'symptom' : entities['symp'],
                 'disease' : entities['disease'],
                 'intent' : intent
             }

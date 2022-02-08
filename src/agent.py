@@ -81,6 +81,12 @@ class Agent():
     async def medical_test_suggestion(self, indicators: List):
         suggestions = self.medical_test.get_suggestions(indicators)
         for s in suggestions:
-            s["relevant_questions"] = await self.elastic_search.search(s["name"], page_index=0, page_size=3)
+            if s.get("name"):
+                es_data = await self.elastic_search.search(s["name"], page_index=0, page_size=3)
+                relevant_questions = [e["question"] for e in es_data]
+                s["relevant_questions"] = "<br>".join(relevant_questions)
+                s["highlight"] = {
+                        "relevant_questions": [f'<em>{"<br><br>".join(relevant_questions)}</em>'],
+                    }
         return suggestions
     
