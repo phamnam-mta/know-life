@@ -1,4 +1,3 @@
-from Inferencer import inferencer
 
 def test_overview():
     # simple case

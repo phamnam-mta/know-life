@@ -23,12 +23,9 @@ from py2neo import Graph, Node
 class Neo4jProvider():
     def __init__(self, uri: Text = None, user: Text = None, password: Text = None):
         if not uri:
-            # uri = NEO4J_URL
-            # user = NEO4J_AUTH.split("/")[0]
-            # password = NEO4J_AUTH.split("/")[1]
-            uri = 'bolt://localhost:7687'
-            user = 'neo4j'
-            password = 'password'
+            uri = NEO4J_URL
+            user = NEO4J_AUTH.split("/")[0]
+            password = NEO4J_AUTH.split("/")[1]
         self.graph = Graph(uri, auth=(user, password))
         self.normalizer = Normalizer()
 
