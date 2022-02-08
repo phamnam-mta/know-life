@@ -41,10 +41,9 @@ NEO4J_THRESHOLD = 0.8
 DIAGNOSIS_INTENT = ['diagnosis']
 VERIFY_INTENT = ['verify']
 INFO_INTENT = ['queryentity','queryattribute.attr_cause','queryattribute.attr_symp','queryattribute.attr_rf',\
-    'queryattribute.attr_treat','queryattribute.attr_prev','queryattribute.attr_sev','advise']
+    'queryattribute.attr_treat','queryattribute.attr_prev','queryattribute.attr_sev','advise','queryattribute.attr_diag']
 
 INTENT_MAPPER= {
-    'diagnosis':"diagnosis",
     'verify':"verify",
     'queryentity':"overview",
     'queryattribute.attr_cause':"cause",
@@ -53,7 +52,12 @@ INTENT_MAPPER= {
     'queryattribute.attr_prev':"prevention",
     'queryattribute.attr_sev':"severity",
     'advise':"advise",
+    'queryattribute.attr_rf':'risk_factor',
+    'queryattribute.attr_diag':'diagnosis'
 }
 URI = 'bolt://localhost:7687'
 USER = 'neo4j'
 PASSWORD = 'password'
+
+# NORMALIZE DISEASE
+DISEASE_STOPW0RDS = ['bệnh','disease']

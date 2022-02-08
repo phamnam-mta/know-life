@@ -40,7 +40,7 @@ class EntitySearch():
 
         result = []
         index = 0
-        
+        print(entities)
         for intent in entities['intent']:
             request = {
                 'symptom' : entities['symptom'],

@@ -40,13 +40,15 @@ class Inferencer:
         intent = request['intent']
         symptom = request['symptom']
         disease = request['disease']
+        disease = self.normalizer.normalize_disease(disease)
+        print(disease)
 
         if intent in VERIFY_INTENT:
             neo4j_intent = INTENT_MAPPER[intent]
             result = self.get_answer_verify(symptom,disease)
             
         if intent in DIAGNOSIS_INTENT:
-            neo4j_intent = INTENT_MAPPER[intent]
+            # neo4j_intent = INTENT_MAPPER[intent]
             result = self.get_answer_diag(symptom)
             result = self.reranking_diag(result)
 

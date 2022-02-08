@@ -4,7 +4,8 @@ from src.utils.constants import (
     VERIFY_INTENT,
     DIAGNOSIS_INTENT,
     INFO_INTENT,
-    INTENT_MAPPER
+    INTENT_MAPPER,
+    DISEASE_STOPW0RDS
 )
 
 class Normalizer:
@@ -76,4 +77,16 @@ class Normalizer:
                 Các triệu chứng liên quan {disease}: {','.join(related_symptom)}
                 Các triệu chứng KHÔNG liên quan {disease}: {','.join(not_related_symptom)}
                 '''
+        return result
+
+    def normalize_disease(self, disease):
+        '''
+        Args:
+            - disease (list of str)
+        '''
+        result = []
+        for d in disease:
+            for stopword in DISEASE_STOPW0RDS:
+                d = d.lower().replace(stopword,'').strip()
+            result.append(d)
         return result
