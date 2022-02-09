@@ -32,14 +32,16 @@ class MedicalTest():
                 if is_relevant_string(i["test_name"], m["name"], method=['exact','fuzzy'], score=90):
                     sg["name"] = m["name"]
                     sg["overview"] = m["overview"]
-                    references.extend(m["references"])
+                    if m["references"]:
+                        references.extend(m["references"])
                     for q in self.quantitative:
                         if q["medical_test"]["id"] == m["id"]:
                             if q["test_result"] == TestResult.positive.value and is_relevant_string(str(i["result"]), POSITIVE_TEXT, score=90, remove_accent=True):
                                sg["note"] = q["note"]
                                sg["cause"] = q["cause"]
                                sg["recommend"] = q["recommend"]
-                               references.extend(m["references"])
+                               if m["references"]:
+                                   references.extend(m["references"])
                                break
                             elif is_float(str(i["result"])):
                                 test_result = float(str(i["result"]))
@@ -47,7 +49,8 @@ class MedicalTest():
                                     sg["note"] = q["note"]
                                     sg["cause"] = q["cause"]
                                     sg["recommend"] = q["recommend"]
-                                    references.extend(m["references"])
+                                    if m["references"]:
+                                        references.extend(m["references"])
                                     break
                     break
             sg["references"] = list(dict.fromkeys(references))
