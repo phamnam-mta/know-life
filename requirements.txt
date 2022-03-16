@@ -1,16 +1,16 @@
-transformers==4.11.3
-torch==1.6.0
+# transformers==4.11.3
+# torch==1.6.0
 seqeval==0.0.12
-pytorch-crf==0.7.2
-sentence-transformers==2.1.0
+# pytorch-crf==0.7.2
+# sentence-transformers==2.1.0
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
-vncorenlp==1.0.3
+# vncorenlp==1.0.3
 sanic==21.9.3
 Sanic-Cors==1.0.1
 sanic-jwt==1.7.0
-neo4j
-py2neo
-sentencepiece
+# neo4j
+# py2neo
+# sentencepiece
 tqdm
 numpy

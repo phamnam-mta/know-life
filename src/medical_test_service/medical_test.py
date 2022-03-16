@@ -3,7 +3,6 @@ from typing import Text, List
 from src.utils.io import read_json
 from src.utils.fuzzy import is_relevant_string
 from src.utils.common import is_float
-from src.search_engine import ESKnowLife
 from src.utils.constants import (
     MEDICAL_TEST_PATH, 
     QUANTITATIVE_PATH, 

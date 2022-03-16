@@ -7,7 +7,7 @@ from typing import (
     Union,
     List
 )
-from src.search_engine import EntitySearch, SemanticSearch, ESKnowLife
+#from src.search_engine import EntitySearch, SemanticSearch, ESKnowLife
 from src.medical_test_service.medical_test import MedicalTest
 from src.utils.constants import (
     ResponseAttribute
@@ -35,11 +35,14 @@ class Agent():
             es_url: Text, 
             index: Text
     ) -> None:
-        self.entity_search = EntitySearch(
-            model_dir=kb_model_dir,
-            data_dir=kb_data_dir,)
-        self.semantic_search = SemanticSearch(qa_model_dir, es_url, index)
-        self.elastic_search = ESKnowLife(es_url, index)
+#         self.entity_search = EntitySearch(
+#             model_dir=kb_model_dir,
+#             data_dir=kb_data_dir,)
+#         self.semantic_search = SemanticSearch(qa_model_dir, es_url, index)
+#         self.elastic_search = ESKnowLife(es_url, index)
+        self.entity_search = 1
+        self.semantic_search = 1
+        self.elastic_search = 1
         self.medical_test = MedicalTest()
 
     @classmethod
@@ -80,13 +83,13 @@ class Agent():
     @agent_must_be_ready
     async def medical_test_suggestion(self, indicators: List):
         suggestions = self.medical_test.get_suggestions(indicators)
-        for s in suggestions:
-            if s.get("name"):
-                es_data = await self.elastic_search.search(s["name"], page_index=0, page_size=3)
-                relevant_questions = [e["question"] for e in es_data]
-                s["relevant_questions"] = "<br>".join(relevant_questions)
-                s["highlight"] = {
-                        "relevant_questions": [f'<em>{"<br><br>".join(relevant_questions)}</em>'],
-                    }
+#         for s in suggestions:
+#             if s.get("name"):
+#                 es_data = await self.elastic_search.search(s["name"], page_index=0, page_size=3)
+#                 relevant_questions = [e["question"] for e in es_data]
+#                 s["relevant_questions"] = "<br>".join(relevant_questions)
+#                 s["highlight"] = {
+#                         "relevant_questions": [f'<em>{"<br><br>".join(relevant_questions)}</em>'],
+#                     }
         return suggestions
     
